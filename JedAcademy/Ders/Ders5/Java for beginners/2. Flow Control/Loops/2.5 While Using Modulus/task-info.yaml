@@ -1,0 +1,20 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: 1
+    is_correct: true
+  - text: 3
+    is_correct: false
+  - text: 5
+    is_correct: false
+  - text: 6
+    is_correct: false
+  - text: 7
+    is_correct: false
+files:
+  - name: src/WhileUsingModulus.java
+    visible: true
+    learner_created: false
+status: Unchecked
+record: -1
+local_check: true

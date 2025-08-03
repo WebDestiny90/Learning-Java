@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="TermsProjectSettings">
+    <currentTermsLanguage>en</currentTermsLanguage>
+    <terms>
+      <map>
+        <entry key="en">
+          <value>
+            <map>
+              <entry key="4498089">
+                <value>
+                  <list>
+                    <Term value=".repeat()" definition=".repeat() is a method in Java that repeats the string a specified number of times. For example, 'Java'.repeat(3) results in 'JavaJavaJava'." />
+                    <Term value=".length()" definition=".length() is a method in Java that returns the number of characters in a String. For example, 'Java'.length() returns 4." />
+                  </list>
+                </value>
+              </entry>
+              <entry key="39994299">
+                <value>
+                  <list>
+                    <Term value="Arrays" definition="In Java, an Array is a list that contains values of the same type with a certain order." />
+                    <Term value="array" definition="In Java, an Array is a list that contains values of the same type with a certain order." />
+                    <Term value="index" definition="In Java arrays, the position of elements is labeled by an index, where the first element starts at index zero." />
+                  </list>
+                </value>
+              </entry>
+              <entry key="146846183">
+                <value>
+                  <list>
+                    <Term value="System.out.print()" definition="Prints a message in the console." />
+                    <Term value="System.out.println()" definition="Prints a message in the console, then ends the line." />
+                    <Term value="sout" definition="A shortcut to quickly type the println command." />
+                  </list>
+                </value>
+              </entry>
+              <entry key="153664861">
+                <value>
+                  <list>
+                    <Term value="break" definition="The 'break' statement is used to end a loop prematurely." />
+                    <Term value="continue" definition="The 'continue' statement is used to skip the current iteration of a loop and proceed to the next iteration." />
+                  </list>
+                </value>
+              </entry>
+              <entry key="163043894">
+                <value>
+                  <list>
+                    <Term value="Comparison operators" definition="In Java, comparison operators are used to compare two values and return a boolean result (true or false). Common operators include == for equal to, != for not equal to, &lt; for less than, &lt;= for less than or equal to, &gt; for greater than, and &gt;= for greater than or equal to." />
+                    <Term value="comparison operators" definition="In Java, comparison operators are used to compare two values and return a boolean result (true or false). Common operators include == for equal to, != for not equal to, &lt; for less than, &lt;= for less than or equal to, &gt; for greater than, and &gt;= for greater than or equal to." />
+                  </list>
+                </value>
+              </entry>
+              <entry key="286933269">
+                <value>
+                  <list>
+                    <Term value="int" definition="A data type in Java used to store integers, that is, numbers without decimal digits." />
+                    <Term value="double" definition="A data type in Java used to store numbers with decimal digits." />
+                    <Term value="boolean" definition="A data type in Java used to store true or false values." />
+                    <Term value="String" definition="A data type in Java used to save literal messages." />
+                  </list>
+                </value>
+              </entry>
+              <entry key="394179273">
+                <value>
+                  <list>
+                    <Term value="ArrayList" definition="A resizable array in Java capable of storing objects exclusively, not primitive data types." />
+                    <Term value="get(index)" definition="Returns the value at the specified index in the ArrayList." />
+                    <Term value="indexOf(element)" definition="Returns the first index where the element is present in the ArrayList, or -1 if the element is not found." />
+                    <Term value="set(index, element)" definition="Sets the value of the element at the specified index in the ArrayList." />
+                    <Term value="remove(element)" definition="Removes the first occurrence of the specified element in the ArrayList." />
+                    <Term value="remove(index)" definition="Removes the element at the specified index in the ArrayList." />
+                    <Term value="clear()" definition="Removes all elements in the ArrayList." />
+                    <Term value="size()" definition="Returns the number of elements in the ArrayList." />
+                  </list>
+                </value>
+              </entry>
+              <entry key="486922715">
+                <value>
+                  <list>
+                    <Term value="2D arrays" definition="A 2D array is an array of arrays, commonly used in programming to represent a grid, table, or matrix with rows and columns." />
+                    <Term value="Unicode" definition="Unicode is a character encoding standard that allows the representation of text and symbols, including special characters like '■' for black square and '□' for white square." />
+                    <Term value="loops" definition="In programming, loops are control structures that repeat a sequence of instructions until a certain condition is met." />
+                  </list>
+                </value>
+              </entry>
+              <entry key="663078726">
+                <value>
+                  <list>
+                    <Term value="ArrayList" definition="A part of the Java framework that allows dynamic size lists, providing methods for actions like adding, setting, getting, and deleting elements. However, it is slower than arrays and can only store objects." />
+                    <Term value="import java.util.ArrayList" definition="A statement in Java to import the ArrayList class from the java.util package, enabling its use in the program." />
+                    <Term value="ArrayList&lt;dataType&gt; arraylistName" definition="Syntax to create an ArrayList in Java, where 'dataType' specifies the type of elements it can store, and 'arraylistName' is the name of the ArrayList." />
+                    <Term value="new ArrayList&lt;dataType&gt;(numberOfElements)" definition="Syntax to initialize an ArrayList in Java. The 'numberOfElements' parameter is optional and indicates the initial capacity of the ArrayList, which defaults to zero if omitted." />
+                  </list>
+                </value>
+              </entry>
+              <entry key="765496906">
+                <value>
+                  <list>
+                    <Term value="Java file" definition="Every Java file ends in .java, and it should contain a class inside with the same name." />
+                    <Term value="java file" definition="Every Java file ends in .java, and it should contain a class inside with the same name." />
+                    <Term value="main method" definition="The main method in Java is where you place the lines you want your code to execute. It defines the entry point for the program." />
+                    <Term value="IDE (IntelliJ)" definition="The IDE (IntelliJ) takes care of compiling the .java file into a .class file that the JVM can understand and execute." />
+                  </list>
+                </value>
+              </entry>
+              <entry key="790415469">
+                <value>
+                  <list>
+                    <Term value="Shortcut operators" definition="Shortcut operators are shorter notations for arithmetic operations like addition, subtraction, multiplication, and division, commonly used to make code more concise." />
+                  </list>
+                </value>
+              </entry>
+              <entry key="883084506">
+                <value>
+                  <list>
+                    <Term value="Static attributes" definition="Static attributes are attributes that are shared among all objects of a certain type and are not tied to a specific instance." />
+                    <Term value="static attributes" definition="Static attributes are attributes that are shared among all objects of a certain type and are not tied to a specific instance." />
+                  </list>
+                </value>
+              </entry>
+              <entry key="909729228">
+                <value>
+                  <list>
+                    <Term value="instance method" definition="An instance method is a method that can execute certain instructions and is associated with an instance of a class." />
+                    <Term value="methods" definition="A method is essentially a piece of code that is executed only when the name of the method is called or invoked." />
+                    <Term value="method" definition="A method is essentially a piece of code that is executed only when the name of the method is called or invoked." />
+                    <Term value="return type" definition="The return type specifies the type of value a method returns after execution." />
+                    <Term value="arguments" definition="Arguments are certain values that may be required to carry out the logic of a method's code." />
+                    <Term value="Arguments" definition="Arguments are certain values that may be required to carry out the logic of a method's code." />
+                    <Term value="Void" definition="When a method does not return any value, its return type is set as void." />
+                    <Term value="void" definition="When a method does not return any value, its return type is set as void." />
+                  </list>
+                </value>
+              </entry>
+              <entry key="983694976">
+                <value>
+                  <list>
+                    <Term value="substring" definition="A substring is a portion of a string, extracted using the substring method which takes two integer inputs called 'indexes'. The method returns the part of the string starting from the letter at the first index up to the letter just before the second index." />
+                    <Term value="indexes" definition="In programming, an index is a position within a string, typically starting from 0, which identifies specific letters or elements." />
+                    <Term value="index" definition="In programming, an index is a position within a string, typically starting from 0, which identifies specific letters or elements." />
+                  </list>
+                </value>
+              </entry>
+              <entry key="1167606548">
+                <value>
+                  <list>
+                    <Term value="Boolean operators" definition="In boolean logic, a boolean operator is used to manipulate true or false values, forming compound boolean expressions." />
+                    <Term value="boolean operators" definition="In boolean logic, a boolean operator is used to manipulate true or false values, forming compound boolean expressions." />
+                  </list>
+                </value>
+              </entry>
+              <entry key="1208561450">
+                <value>
+                  <list>
+                    <Term value="Meal class" definition="A template for objects that contain the name of a plate along with its price." />
+                    <Term value="getBill method" definition="A method that takes no input but returns a String containing the current name and price of the Meal object." />
+                  </list>
+                </value>
+              </entry>
+              <entry key="1232171635">
+                <value>
+                  <list>
+                    <Term value="Attributes" definition="Objects can store values known as attributes, which represent characteristics or properties of the object." />
+                    <Term value="attributes" definition="Objects can store values known as attributes, which represent characteristics or properties of the object." />
+                    <Term value="attribute" definition="Objects can store values known as attributes, which represent characteristics or properties of the object." />
+                    <Term value="private" definition="The keyword 'private' means that the attribute can only be accessed by the class it is defined in." />
+                  </list>
+                </value>
+              </entry>
+              <entry key="1381384533">
+                <value>
+                  <list>
+                    <Term value="Objects" definition="In Java, an Object is an instance of a class, and the process of creating an object is called instantiation." />
+                    <Term value="object" definition="In Java, an Object is an instance of a class, and the process of creating an object is called instantiation." />
+                    <Term value="Object-Oriented Programming" definition="Object-Oriented Programming (OOP) is a programming paradigm where classes are used as blueprints to create objects." />
+                    <Term value="instantiation" definition="Instantiation is the process of creating an object in Java using the keyword 'new'." />
+                  </list>
+                </value>
+              </entry>
+              <entry key="1420098605">
+                <value>
+                  <list>
+                    <Term value="Wrapper Class" definition="In Java, a Wrapper Class has a constructor designed to contain its equivalent primitive data type. It allows primitive types to be used as objects." />
+                    <Term value="Wrapper class" definition="In Java, a Wrapper Class has a constructor designed to contain its equivalent primitive data type. It allows primitive types to be used as objects." />
+                    <Term value="wrapper class" definition="In Java, a Wrapper Class has a constructor designed to contain its equivalent primitive data type. It allows primitive types to be used as objects." />
+                    <Term value="boxing" definition="In Java, boxing is the process of converting a primitive type to its equivalent object in a wrapper class." />
+                    <Term value="boxes" definition="In Java, boxing is the process of converting a primitive type to its equivalent object in a wrapper class." />
+                    <Term value="unboxing" definition="Unboxing is the process of converting an object from a wrapper class to its primitive equivalent in Java." />
+                    <Term value="autoboxing" definition="In Java, autoboxing is when the compiler automatically converts a primitive type to its corresponding wrapper class object." />
+                    <Term value="autounboxing" definition="Autounboxing is when the compiler automatically converts a wrapper class object to its primitive equivalent in Java." />
+                  </list>
+                </value>
+              </entry>
+              <entry key="1801119657">
+                <value>
+                  <list>
+                    <Term value="Constructors" definition="In Java, a Constructor is used to tell Java how to make an object when specific values are to be assigned to its attributes." />
+                    <Term value="constructors" definition="In Java, a Constructor is used to tell Java how to make an object when specific values are to be assigned to its attributes." />
+                    <Term value="public" definition="The keyword 'public' allows any class to access it, be it a class or an attribute." />
+                  </list>
+                </value>
+              </entry>
+              <entry key="1836164202">
+                <value>
+                  <list>
+                    <Term value="Integer division" definition="In Java, the division of two integers will result in another integer, with decimal digits being ignored." />
+                    <Term value="type casting" definition="Type casting is a way to convert a variable from one data type to another, such as casting an integer to a double." />
+                  </list>
+                </value>
+              </entry>
+            </map>
+          </value>
+        </entry>
+      </map>
+    </terms>
+    <termsVersions>
+      <map>
+        <entry key="en" value="5" />
+      </map>
+    </termsVersions>
+  </component>
+</project>

@@ -1,0 +1,24 @@
+type: output
+files:
+  - name: test/output.txt
+    visible: false
+    learner_created: false
+  - name: src/RollerCoaster.java
+    visible: true
+    placeholders:
+      - offset: 221
+        length: 44
+        placeholder_text: /* Replace with the appropriate condition */
+        initial_state:
+          length: 44
+          offset: 221
+        initialized_from_dependency: false
+        encrypted_possible_answer: 63JAXSgFbz1N8uA4Qqbugg==
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: test/latest_output.txt
+    visible: false
+    learner_created: false
+status: Unchecked
+record: -1

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="TranslationProjectSettings">
+    <option name="currentTranslationLanguage" value="Russian" />
+    <option name="structureTranslation">
+      <map>
+        <entry key="Russian">
+          <value>
+            <map>
+              <entry key="1167606548" value="Логические операторы  " />
+              <entry key="1172206622" value="ArrayList  " />
+              <entry key="1194015323" value="2.3 Умная комната  " />
+              <entry key="1196248852" value="1.2 Скажи Привет  " />
+              <entry key="1196537834" value="2.8 Сотый простое  " />
+              <entry key="1208561450" value="3.5 Сделать Комбинацию  " />
+              <entry key="1221061772" value="4. Массивы и методы работы со строками  " />
+              <entry key="1232171635" value="Атрибуты  " />
+              <entry key="1259972476" value="1. Основы  " />
+              <entry key="1306377187" value="3.3 Автомобильный Завод  " />
+              <entry key="1381384533" value="Объекты" />
+              <entry key="1420098605" value="Классы-Обертки  " />
+              <entry key="1424144882" value="Двумерные массивы  " />
+              <entry key="1458623594" value="Оператор else  " />
+              <entry key="146846183" value="Операторы вывода  " />
+              <entry key="1492283671" value="Вложенные циклы и условные операторы  " />
+              <entry key="1500745428" value="Цикл for  " />
+              <entry key="1517593854" value="1.1 Синтаксис класса  " />
+              <entry key="153664861" value="break и continue  " />
+              <entry key="1571634050" value="Операторы  " />
+              <entry key="163043894" value="Операторы сравнения  " />
+              <entry key="1656067101" value="2.2 Американские горки  " />
+              <entry key="1714730413" value="5. ArrayList и двумерные массивы  " />
+              <entry key="174228237" value="3.4 Оценка Возраста  " />
+              <entry key="1763799876" value="Вложенные условные операторы  " />
+              <entry key="1786526827" value="Условные операторы  " />
+              <entry key="1801119657" value="Конструкторы  " />
+              <entry key="1836164202" value="Целочисленное деление и приведение типов  " />
+              <entry key="1857440617" value="Структура  " />
+              <entry key="1865229541" value="3. Объекты и методы  " />
+              <entry key="191251321" value="3.2 Создание Обуви  " />
+              <entry key="1964999357" value="2.5 While с использованием модуло  " />
+              <entry key="1988817137" value="Переменные  " />
+              <entry key="2022360256" value="2.7 Нахождение простых чисел  " />
+              <entry key="20295130" value="Методы  " />
+              <entry key="268282561" value="Объекты  " />
+              <entry key="286933269" value="Сохранение значений  " />
+              <entry key="374787955" value="4.2 Резак Слов  " />
+              <entry key="379483787" value="2. Управление потоком  " />
+              <entry key="386892893" value="Улучшенный Цикл for  " />
+              <entry key="388560208" value="Условные операторы  " />
+              <entry key="394179273" value="Методы ArrayList  " />
+              <entry key="39994299" value="Массивы  " />
+              <entry key="434628801" value="3.1 Создание Вещи  " />
+              <entry key="4498089" value="Длина Строки  " />
+              <entry key="475567448" value="1.3 Квитанция кафе  " />
+              <entry key="486922715" value="5.3 Шахматная доска  " />
+              <entry key="508098711" value="5.2 Калькулятор Среднего  " />
+              <entry key="526788683" value="2.1 Очки клиента  " />
+              <entry key="536585673" value="Циклы  " />
+              <entry key="581073511" value="4.1 Найти Самое Короткое Слово  " />
+              <entry key="623574329" value="1.5 Логика с булевыми  " />
+              <entry key="625828145" value="Цикл while  " />
+              <entry key="663078726" value="ArrayList  " />
+              <entry key="668292919" value="Массивы  " />
+              <entry key="681291401" value="1.6 Булевый калькулятор  " />
+              <entry key="708850433" value="Возврат Значений  " />
+              <entry key="709254056" value="3.6 Подсчет Овец  " />
+              <entry key="765496906" value="Классы в Java  " />
+              <entry key="773870136" value="1.4 Калькулятор скорости  " />
+              <entry key="790415469" value="Укороченные операторы  " />
+              <entry key="811575268" value="2.6 Ломая лед  " />
+              <entry key="826301480" value="Изменение значений  " />
+              <entry key="857896698" value="Методы строк  " />
+              <entry key="883084506" value="Статические Атрибуты  " />
+              <entry key="903725586" value="5.1 Организатор Месяцев  " />
+              <entry key="909729228" value="Методы с Возвращаемым Типом Void  " />
+              <entry key="921222428" value="Двумерные Массивы  " />
+              <entry key="931326089" value="4.3 Получить Список Букв  " />
+              <entry key="934983136" value="4.4 Подсчет Ошибок  " />
+              <entry key="983694976" value="Подстроки  " />
+              <entry key="992640493" value="2.4 Нечетный селектор  " />
+            </map>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="translationVersions">
+      <map>
+        <entry key="Russian" value="33" />
+      </map>
+    </option>
+  </component>
+</project>

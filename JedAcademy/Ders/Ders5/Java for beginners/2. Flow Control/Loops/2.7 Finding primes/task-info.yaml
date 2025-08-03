@@ -1,0 +1,39 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: "continue, continue"
+    is_correct: false
+  - text: "continue, break"
+    is_correct: true
+  - text: "break, break"
+    is_correct: true
+  - text: "break, continue"
+    is_correct: false
+files:
+  - name: src/FindingPrimes.java
+    visible: true
+    placeholders:
+      - offset: 663
+        length: 23
+        placeholder_text: /* break or continue */
+        initial_state:
+          length: 23
+          offset: 663
+        initialized_from_dependency: false
+        encrypted_possible_answer: +rreWeLZ2/PtWdFPxkaAAA==
+        selected: false
+        status: Unchecked
+      - offset: 934
+        length: 23
+        placeholder_text: /* break or continue */
+        initial_state:
+          length: 23
+          offset: 934
+        initialized_from_dependency: false
+        encrypted_possible_answer: +rreWeLZ2/PtWdFPxkaAAA==
+        selected: false
+        status: Unchecked
+    learner_created: false
+status: Unchecked
+record: -1
+local_check: true

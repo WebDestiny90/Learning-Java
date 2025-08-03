@@ -1,0 +1,34 @@
+type: output
+files:
+  - name: test/output.txt
+    visible: false
+    learner_created: false
+  - name: src/ClientPoints.java
+    visible: true
+    placeholders:
+      - offset: 94
+        length: 39
+        placeholder_text: /* Replace with an appropriate value */
+        initial_state:
+          length: 39
+          offset: 94
+        initialized_from_dependency: false
+        encrypted_possible_answer: tOBZruASZDyNTMhFnKhISw==
+        selected: false
+        status: Unchecked
+      - offset: 163
+        length: 39
+        placeholder_text: /* Replace with an appropriate value */
+        initial_state:
+          length: 39
+          offset: 163
+        initialized_from_dependency: false
+        encrypted_possible_answer: 1qQ9kQ9eUXSirgUkxBvydQ==
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: test/latest_output.txt
+    visible: false
+    learner_created: false
+status: Unchecked
+record: -1

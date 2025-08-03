@@ -1,0 +1,14 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: continue;
+    is_correct: false
+  - text: machineOn = false;
+    is_correct: true
+files:
+  - name: src/BreakingTheIce.java
+    visible: true
+    learner_created: false
+status: Unchecked
+record: -1
+local_check: true
