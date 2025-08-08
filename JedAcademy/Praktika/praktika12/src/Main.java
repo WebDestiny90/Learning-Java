@@ -18,12 +18,12 @@ public class Main {
     //      }
     //    }
 
-    Map<Long, String> humanInfo = new HashMap<>();
+    Human human = new Human(0543001l, "Taleh", "Aghayev", 34);
 
-    Human human = new Human(1L, "Taleh");
-    
-    humanInfo.put(human.getId(), human.getName());
+    Map<Long, Human> info = new HashMap<>();
 
-    System.out.println(humanInfo);
+    info.put(human.getId(), human);
+
+    System.out.println(info);
   }
 }
