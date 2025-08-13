@@ -1,8 +1,9 @@
 public class Car {
   private String model;
+  private String mark;
   private String color;
-  private String engine;
   private int year;
+  private double engine;
 
   public String getModel() {
     return model;
@@ -10,6 +11,14 @@ public class Car {
 
   public void setModel(String model) {
     this.model = model;
+  }
+
+  public String getMark() {
+    return mark;
+  }
+
+  public void setMark(String mark) {
+    this.mark = mark;
   }
 
   public String getColor() {
@@ -20,14 +29,6 @@ public class Car {
     this.color = color;
   }
 
-  public String getEngine() {
-    return engine;
-  }
-
-  public void setEngine(String engine) {
-    this.engine = engine;
-  }
-
   public int getYear() {
     return year;
   }
@@ -36,13 +37,16 @@ public class Car {
     this.year = year;
   }
 
+  public double getEngine() {
+    return engine;
+  }
+
+  public void setEngine(double engine) {
+    this.engine = engine;
+  }
+
   @Override
   public String toString() {
-    return "Car{" +
-            "model='" + model + '\'' +
-            ", color='" + color + '\'' +
-            ", engine='" + engine + '\'' +
-            ", year=" + year +
-            '}';
+    return "Car{" + "model='" + model + '\'' + ", mark='" + mark + '\'' + ", color='" + color + '\'' + ", year=" + year + ", engine=" + engine + '}';
   }
 }

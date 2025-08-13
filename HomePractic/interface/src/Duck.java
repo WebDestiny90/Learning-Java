@@ -1,7 +1,7 @@
-public class Bird implements Animal {
+public class Duck implements Animal {
   @Override
   public void makeSound() {
-    System.out.println("cik-cik");
+    System.out.println("Kwa-Kwa");
   }
 
   @Override
@@ -11,6 +11,6 @@ public class Bird implements Animal {
 
   @Override
   public boolean swimming() {
-    return false;
+    return true;
   }
 }

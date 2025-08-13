@@ -1,9 +1,10 @@
 public class Main {
   public static void main(String[] args) {
-    var cat = new Cat();
-
+    Cat cat = new Cat();
+    Dog dog = new Dog();
     cat.makeSound();
-    String eat = cat.eat();
-    System.out.println(eat);
+    cat.animaEat();
+    dog.makeSound();
+    dog.animaEat();
   }
 }

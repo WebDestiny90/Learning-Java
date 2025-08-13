@@ -1,4 +1,7 @@
 public interface Animal {
   void makeSound();
-  void flyable();
+
+  boolean flyable();
+
+  boolean swimming();
 }
