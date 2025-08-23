@@ -2,19 +2,19 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class App {
-  //  static void check(int age) throws MyException {
-  //    if (age < 18) {
-  //      throw new MyException("Yaş 18-dən kiçik ola bilməz!");
-  //    }
-  //  }
+  // static void check(int age) throws MyException {
+  // if (age < 18) {
+  // throw new MyException("Yaş 18-dən kiçik ola bilməz!");
+  // }
+  // }
   //
   public static void main(String[] args) {
     //
-    //    try {
-    //      check(15);
-    //    } catch (MyException e) {
-    //      System.out.println(e.getMessage());
-    //    }
+    // try {
+    // check(15);
+    // } catch (MyException e) {
+    // System.out.println(e.getMessage());
+    // }
 
     // try {
     // int a = 10;
@@ -29,7 +29,6 @@ public class App {
 
     while (age != 18) {
       try {
-        age = sc.nextInt(); // age-e yeni deyer teyin edirik
         System.out.print("Yaşınızı daxil edin: ");
         age = sc.nextInt();
 
