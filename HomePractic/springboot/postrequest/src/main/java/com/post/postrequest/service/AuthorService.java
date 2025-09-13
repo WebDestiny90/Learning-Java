@@ -41,7 +41,7 @@ public class AuthorService {
   }
 
 
-  public AuthorResponse xnxx(Long id) {
+  public AuthorResponse authorGetById(Long id) {
     AuthorEntity x = repository.findById(id).get();
 
     return map.entityToDto(x);

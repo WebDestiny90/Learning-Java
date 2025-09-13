@@ -29,6 +29,6 @@ public class AuthorControllerV2 {
 
   @GetMapping("/getby/{id}")
   public AuthorResponse getById(@PathVariable("id") Long id) {
-    return old.xnxx(id);
+    return old.authorGetById(id);
   }
 }
