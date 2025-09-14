@@ -15,11 +15,19 @@ public class CarService {
   private final CarRepository carRepository;
   private final CarMapper carMapper;
 
-  public Long addCar(CarResponseDto carResponseDto) {
-    var response = new CarEntity(carResponseDto.getMark(), carResponseDto.getModel(), carResponseDto.getYear(), carResponseDto.getEngine(), carResponseDto.getColor(), carResponseDto.getFuelType());
-    CarEntity carAdd = carRepository.save(response);
-    return carAdd.getId();
-  }
+  public void addCar(CarResponseDto carResponseDto) {
+    carRepository.insertCarReturnId(
+            carResponseDto.getMark(),
+            carResponseDto.getModel(),
+            carResponseDto.getYear(),
+            carResponseDto.getEngine(),
+            carResponseDto.getColor().name(),
+            carResponseDto.getFuelType().name()
+    );
+ }
 
+  public List<CarResponseDto> getCars() {
+    return carMapper.carListEntityToDto(carRepository.findCars());
+  }
 
 }

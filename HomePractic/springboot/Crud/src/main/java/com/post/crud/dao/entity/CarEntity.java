@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "car2")
+@Table(name = "car_list")
 public class CarEntity {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,13 +34,5 @@ public class CarEntity {
   LocalDateTime createdAt;
   @UpdateTimestamp
   LocalDateTime updatedAt;
-
-  public CarEntity(String mark, String model, Integer year, Integer engine, CarColor color, FuelType fuelType) {
-    this.mark = mark;
-    this.model = model;
-    this.year = year;
-    this.engine = engine;
-    this.color = color;
-    this.fuelType = fuelType;
   }
-}
+

@@ -10,7 +10,14 @@ import java.util.List;
 @Component
 public class CarMapper {
   public CarResponseDto carEntityToDto(CarEntity carEntity) {
-    return CarResponseDto.builder().mark(carEntity.getMark()).model(carEntity.getModel()).year(carEntity.getYear()).engine(carEntity.getEngine()).color(carEntity.getColor()).fuelType(carEntity.getFuelType()).build();
+    return CarResponseDto.builder()
+            .mark(carEntity.getMark())
+            .model(carEntity.getModel())
+            .year(carEntity.getYear())
+            .engine(carEntity.getEngine())
+            .color(carEntity.getColor())
+            .fuelType(carEntity.getFuelType())
+            .build();
   }
 
   public List<CarResponseDto> carListEntityToDto(List<CarEntity> carEntity) {

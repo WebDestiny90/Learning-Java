@@ -8,6 +8,8 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class CarResponseDto {
@@ -19,13 +21,4 @@ public class CarResponseDto {
   CarColor color;
   @Enumerated(EnumType.STRING)
   FuelType fuelType;
-
-  public CarResponseDto(String mark, String model, Integer year, Integer engine, CarColor color, FuelType fuelType) {
-    this.mark = mark;
-    this.model = model;
-    this.year = year;
-    this.engine = engine;
-    this.color = color;
-    this.fuelType = fuelType;
-  }
 }

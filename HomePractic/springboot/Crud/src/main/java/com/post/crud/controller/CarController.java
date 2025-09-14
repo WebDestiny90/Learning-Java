@@ -16,12 +16,12 @@ public class CarController {
   final private CarRepository carRepository;
 
   @PostMapping
-  private Long addCar(@RequestBody CarResponseDto carResponseDto) {
-    return carService.addCar(carResponseDto);
+  private void addCar(@RequestBody CarResponseDto carResponseDto) {
+    carService.addCar(carResponseDto);
   }
 
   @GetMapping
   public List<CarResponseDto> getCar() {
-    return carRepository.findCars();
+    return carService.getCars();
   }
 }
