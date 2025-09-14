@@ -16,12 +16,27 @@ public class CarController {
   final private CarRepository carRepository;
 
   @PostMapping
-  private void addCar(@RequestBody CarResponseDto carResponseDto) {
-    carService.addCar(carResponseDto);
+  private Long addCar(@RequestBody CarResponseDto carResponseDto) {
+   return carService.addCar(carResponseDto);
   }
 
   @GetMapping
-  public List<CarResponseDto> getCar() {
-    return carService.getCars();
+  public List<CarResponseDto> getAllCars() {
+    return carService.getAllCars();
+  }
+
+  @GetMapping("/getcar")
+  public CarResponseDto getCar(@RequestParam("id") Long id) {
+    return carService.getCars(id);
+  }
+
+  @DeleteMapping
+  public void deleteCar(@RequestParam("id") Long id){
+    carService.deleteCar(id);
+  }
+
+  @PutMapping("/{id}")
+  public void updateCarMark(@RequestParam("mark") String mark, String model, @PathVariable("id") Long id){
+    carService.updateCarMark(mark,model, id);
   }
 }

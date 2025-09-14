@@ -1,9 +1,6 @@
 package com.post.crud.dao.repository;
 
 import com.post.crud.dao.entity.CarEntity;
-import com.post.crud.dto.CarResponseDto;
-import com.post.crud.util.CarColor;
-import com.post.crud.util.FuelType;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -15,12 +12,16 @@ import java.util.Optional;
 
 @Repository
 public interface CarRepository extends JpaRepository<CarEntity, Long> {
-  @Query(nativeQuery = true, value = "SELECT * FROM car_list")
-  List<CarEntity> findCars();
+  @Query(nativeQuery = true, value = "SELECT * FROM car_list WHERE id=:id")
+  Optional<CarEntity> findCars(Long id);
 
   @Modifying
   @Transactional
-  @Query(nativeQuery = true, value = "INSERT INTO car_list (mark, model, year, engine, color, fuel_type) " +
-          "VALUES (?1,?2,?3,?4,?5,?6)")
-  void insertCarReturnId(String mark, String model, Integer year, Integer engine, String color, String fuel_type);
+  @Query(nativeQuery = true, value = "DELETE FROM car_list WHERE id=:id")
+  void deleteCar(Long id);
+
+  @Modifying
+  @Transactional
+  @Query(nativeQuery = true, value = "UPDATE car_list SET mark=:mark, model=:model WHERE id=:id")
+  void updateCarMark(String mark, String model, Long id);
 }

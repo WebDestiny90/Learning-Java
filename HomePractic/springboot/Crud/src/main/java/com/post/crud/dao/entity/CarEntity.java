@@ -4,9 +4,7 @@ package com.post.crud.dao.entity;
 import com.post.crud.util.CarColor;
 import com.post.crud.util.FuelType;
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -16,6 +14,8 @@ import java.time.LocalDateTime;
 @Entity
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Table(name = "car_list")
 public class CarEntity {
@@ -34,5 +34,5 @@ public class CarEntity {
   LocalDateTime createdAt;
   @UpdateTimestamp
   LocalDateTime updatedAt;
-  }
+}
 

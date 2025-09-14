@@ -1,23 +1,8 @@
-#spring:
-#  application:
-#    name: my_postgres
-#  datasource:
-#    url: jdbc:postgresql://localhost:15432/postgres
-#    username: postgres
-#    password: 12345
-#    driver-class-name: org.postgresql.Driver
-#  jpa:
-#    hibernate:
-#      ddl-auto: update
-#    database-platform: org.hibernate.dialect.PostgreSQLDialect
-#    show-sql: true
-
-
 spring:
   application:
-    name: my-postgres
+    name: my_postgres
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
+    url: jdbc:postgresql://localhost:15432/postgres
     username: postgres
     password: 12345
     driver-class-name: org.postgresql.Driver
@@ -26,3 +11,18 @@ spring:
       ddl-auto: update
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
+
+
+#spring:
+#  application:
+#    name: my-postgres
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/postgres
+#    username: postgres
+#    password: 12345
+#    driver-class-name: org.postgresql.Driver
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    database-platform: org.hibernate.dialect.PostgreSQLDialect
+#    show-sql: true

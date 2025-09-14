@@ -20,6 +20,17 @@ public class CarMapper {
             .build();
   }
 
+  public CarEntity carDtoToEntity(CarResponseDto carResponseDto) {
+    return CarEntity.builder()
+            .mark(carResponseDto.getMark())
+            .model(carResponseDto.getModel())
+            .year(carResponseDto.getYear())
+            .engine(carResponseDto.getEngine())
+            .color(carResponseDto.getColor())
+            .fuelType(carResponseDto.getFuelType())
+            .build();
+  }
+
   public List<CarResponseDto> carListEntityToDto(List<CarEntity> carEntity) {
     List<CarResponseDto> carList = new ArrayList<>();
 
