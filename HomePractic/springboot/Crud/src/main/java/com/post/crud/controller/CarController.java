@@ -36,7 +36,7 @@ public class CarController {
   }
 
   @PutMapping("/{id}")
-  public void updateCarMark(@RequestParam("mark") String mark, String model, @PathVariable("id") Long id){
+  public void updateCarMark(@RequestParam("mark") String mark, @RequestParam("model") String model, @PathVariable("id") Long id){
     carService.updateCarMark(mark,model, id);
   }
 }
