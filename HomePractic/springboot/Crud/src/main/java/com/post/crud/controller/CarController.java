@@ -20,7 +20,7 @@ public class CarController {
    return carService.addCar(carResponseDto);
   }
 
-  @GetMapping
+  @GetMapping("getcar/all")
   public List<CarResponseDto> getAllCars() {
     return carService.getAllCars();
   }

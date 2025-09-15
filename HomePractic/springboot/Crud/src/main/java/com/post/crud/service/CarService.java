@@ -1,7 +1,6 @@
 package com.post.crud.service;
 
 import com.post.crud.dao.entity.CarEntity;
-import com.post.crud.dao.entity.UserEntity;
 import com.post.crud.dao.repository.CarRepository;
 import com.post.crud.dto.CarResponseDto;
 import com.post.crud.mapper.CarMapper;
