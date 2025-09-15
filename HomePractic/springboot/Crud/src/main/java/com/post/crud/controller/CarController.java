@@ -1,6 +1,5 @@
 package com.post.crud.controller;
 
-import com.post.crud.dao.repository.CarRepository;
 import com.post.crud.dto.CarResponseDto;
 import com.post.crud.service.CarService;
 import lombok.RequiredArgsConstructor;
@@ -13,7 +12,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CarController {
   final private CarService carService;
-  final private CarRepository carRepository;
 
   @PostMapping
   private Long addCar(@RequestBody CarResponseDto carResponseDto) {
