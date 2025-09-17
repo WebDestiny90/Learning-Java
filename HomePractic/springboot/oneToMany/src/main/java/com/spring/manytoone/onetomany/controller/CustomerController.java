@@ -1,7 +1,8 @@
 package com.spring.manytoone.onetomany.controller;
 
-import com.spring.manytoone.onetomany.dao.entity.CustomerEntity;
 import com.spring.manytoone.onetomany.dao.repository.CustomerRepository;
+import com.spring.manytoone.onetomany.dto.CustomerResponseDto;
+//import com.spring.manytoone.onetomany.mapper.CustomerMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,8 +16,9 @@ public class CustomerController {
   private final CustomerRepository customerRepository;
 
   @GetMapping("/{id}")
-  public CustomerEntity getUser(@PathVariable Long id) {
-    return customerRepository.findById(id).orElseThrow();
-
+  public CustomerResponseDto getUser(@PathVariable Long id) {
+    var customer = customerRepository.findById(id).orElseThrow();
+//   return CustomerMapper.INSTANCE.toDto(customer);
+    return null;
   }
 }

@@ -5,7 +5,7 @@ import com.spring.manytoone.onetomany.dao.entity.UserEntity;
 import com.spring.manytoone.onetomany.dao.repository.AddressRepository;
 import com.spring.manytoone.onetomany.dao.repository.UserRepository;
 import com.spring.manytoone.onetomany.dto.UserResponseDto;
-import com.spring.manytoone.onetomany.mapper.UserMapper;
+//import com.spring.manytoone.onetomany.mapper.UserMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,12 +17,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class UserController {
   private final UserRepository userRepository;
-//  private final AddressRepository addressRepository;
+// private final AddressRepository addressRepository;
 
   @GetMapping("/{id}")
   public UserResponseDto getUser(@PathVariable Long id) {
     var user = userRepository.findById(id).orElseThrow();
-    return UserMapper.INSTANCE.toDto(user);
+//    return UserMapper.INSTANCE.toDto(user);
 //    return addressRepository.findById(id).orElseThrow();
+    return null;
   }
 }

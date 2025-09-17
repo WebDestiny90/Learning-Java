@@ -17,7 +17,8 @@ public class OrderEntity {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   Long id;
-  String orderDate;
+  String orderName;
+  Integer orderPrice;
 
   @ManyToOne
   @JoinColumn(name = "customer_id")
