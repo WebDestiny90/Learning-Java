@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import org.springframework.context.annotation.Lazy;
 
 import java.util.List;
 
@@ -20,7 +21,6 @@ public class CustomerEntity {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   Long id;
   String name;
-
-  @OneToMany(mappedBy = "customer")
+  @OneToMany(mappedBy = "customer",fetch = FetchType.LAZY,orphanRemoval = true)
   List<OrderEntity> orders;
 }
