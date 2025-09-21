@@ -29,4 +29,7 @@ public class CustomerEntity {
 
   @OneToMany(mappedBy = "customers")
   List<OrderEntity> orderEntities;
+
+  @OneToMany(mappedBy = "customers")
+  List<CommentsEntity> commentsEntities;
 }

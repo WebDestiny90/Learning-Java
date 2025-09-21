@@ -6,15 +6,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
-import java.util.List;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class CustomerResponseDto {
-  String firstName;
-  String surName;
-  List<OrderResponseDto> orderEntities;
-  List<CommentsResponseDto> commentsEntities;
+public class CommentsResponseDto {
+  String comment;
 }
