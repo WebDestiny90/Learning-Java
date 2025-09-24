@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
-@FeignClient(name = "customers", url = "http://localhost:8080/api/v1")
+@FeignClient(name = "customers", url = "http://localhost:8080/api/v1/customer")
 public interface CustomersOrder {
 
-  @GetMapping("/customer")
+  @GetMapping("/get")
   List<CustomerResponseDto> getCustomer();
 }
