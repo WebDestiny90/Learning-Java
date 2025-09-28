@@ -14,6 +14,11 @@ import java.util.List;
 public class UserController {
   private final UserService userService;
 
+  @PostMapping("/add")
+  public void addUser(@RequestBody UserRequestDto userRequestDto) {
+    userService.addUser(userRequestDto);
+  }
+
   @PostMapping("/addUsers")
   public void addUsers(@RequestBody List<UserRequestDto> userRequestDtoList) {
     userService.addUsersList(userRequestDtoList);

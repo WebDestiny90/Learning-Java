@@ -15,6 +15,10 @@ public class UserService {
   private final UserRepository userRepository;
   private final UserMapper userMapper;
 
+  public void addUser(UserRequestDto userRequestDto) {
+    userRepository.save(userMapper.UserEntityToDto(userRequestDto));
+  }
+
   public void addUsersList(List<UserRequestDto> userRequestDto) {
     userRepository.saveAll(userMapper.UserEntityListToDtoList(userRequestDto));
   }
