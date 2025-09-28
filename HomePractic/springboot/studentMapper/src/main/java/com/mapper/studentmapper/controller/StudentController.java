@@ -20,7 +20,7 @@ public class StudentController {
 
   @PostMapping("/add")
   public void addStudent(@RequestBody List<StudentRequestDto> studentRequestDtos){
-    studentRepository.saveAll(studentMapper.dtoToEntity(studentRequestDtos));
+    studentRepository.saveAll(studentMapper.dtoToEntityList(studentRequestDtos));
   }
 
   @GetMapping("/get")

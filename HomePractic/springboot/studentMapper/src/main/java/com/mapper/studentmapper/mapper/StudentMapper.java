@@ -10,29 +10,23 @@ import java.util.List;
 
 @Component
 public class StudentMapper {
-  public List<StudentEntity> dtoToEntity(List<StudentRequestDto> studentRequestDto){
+  public List<StudentEntity> dtoToEntityList(List<StudentRequestDto> studentRequestDto){
     List<StudentEntity> studentEntityList = new ArrayList<>();
     for (StudentRequestDto requestDto : studentRequestDto) {
 
-      StudentEntity studentEntity = new StudentEntity();
-
-      studentEntity.setFullName(requestDto.getFullName());
-      studentEntity.setSurName(requestDto.getSurName());
-      studentEntity.setAge(requestDto.getAge());
-      studentEntity.setStudentPassword(requestDto.getStudentPassword());
-      studentEntityList.add(studentEntity);
+      studentEntityList.add(dtoToEntity(requestDto));
     }
     return studentEntityList;
-  }
+ }
 
-//  public StudentEntity dtoToEntity(StudentRequestDto requestDto) {
-//    return StudentEntity.builder()
-//            .surName(requestDto.getSurName())
-//            .fullName(requestDto.getFullName())
-//            .age(requestDto.getAge())
-//            .studentPassword(requestDto.getStudentPassword())
-//            .build();
-//  }
+  public StudentEntity dtoToEntity(StudentRequestDto requestDto) {
+    return StudentEntity.builder()
+            .surName(requestDto.getSurName())
+            .fullName(requestDto.getFullName())
+            .age(requestDto.getAge())
+            .studentPassword(requestDto.getStudentPassword())
+            .build();
+  }
 
   public StudentResponseDto entityToResponseDto(StudentEntity studentEntity){
     return StudentResponseDto.builder()

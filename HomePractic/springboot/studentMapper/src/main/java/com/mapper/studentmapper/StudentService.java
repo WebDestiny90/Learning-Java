@@ -17,7 +17,7 @@ public class StudentService {
   private final StudentMapper studentMapper;
 
   public void addStudent(List<StudentRequestDto> studentRequestDtos) {
-  studentRepository.saveAll(studentMapper.dtoToEntity(studentRequestDtos));
+  studentRepository.saveAll(studentMapper.dtoToEntityList(studentRequestDtos));
   }
 
   public List<StudentResponseDto> getStudents() {
