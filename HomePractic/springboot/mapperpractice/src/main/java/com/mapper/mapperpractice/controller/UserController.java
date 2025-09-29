@@ -2,6 +2,7 @@ package com.mapper.mapperpractice.controller;
 
 import com.mapper.mapperpractice.dto.UserRequestDto;
 import com.mapper.mapperpractice.dto.UserResponseDto;
+import com.mapper.mapperpractice.mapper.UserMapper;
 import com.mapper.mapperpractice.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +14,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserController {
   private final UserService userService;
+  private final UserMapper userMapper;
 
   @PostMapping("/add")
   public void addUser(@RequestBody UserRequestDto userRequestDto) {
@@ -25,7 +27,7 @@ public class UserController {
   }
 
   @GetMapping("/getUsers")
-  public List<UserResponseDto> getUsers(List<UserResponseDto> userResponseDtoList) {
-    return userService.getUsers(userResponseDtoList);
+  public List<UserResponseDto> getUsers() {
+    return userMapper.userResponseDtoList(userService.getUsers());
   }
 }

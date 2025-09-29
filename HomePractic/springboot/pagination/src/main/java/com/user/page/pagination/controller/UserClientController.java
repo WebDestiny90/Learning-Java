@@ -20,7 +20,8 @@ public class UserClientController {
   }
 
   @GetMapping("/get")
-  public Page<UserClientEntity> getUsers(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "5") int size) {
+  public Page<UserClientEntity> getUsers(@RequestParam(defaultValue = "0") int page,
+                                         @RequestParam(defaultValue = "5") int size) {
     return userClientService.getUsers(page, size);
   }
 }
