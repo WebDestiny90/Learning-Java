@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class UserClientService {
+public class  UserClientService {
   private final UserClientRepository userClientRepository;
   private final UserClientMapper userClientMapper;
 
