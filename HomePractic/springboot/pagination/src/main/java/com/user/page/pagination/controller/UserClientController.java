@@ -2,6 +2,7 @@ package com.user.page.pagination.controller;
 
 import com.user.page.pagination.dao.entity.UserClientEntity;
 import com.user.page.pagination.dto.UserClientRequestDto;
+import com.user.page.pagination.dto.UserClientResponseDto;
 import com.user.page.pagination.service.UserClientService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -20,8 +21,10 @@ public class UserClientController {
   }
 
   @GetMapping("/get")
-  public Page<UserClientEntity> getUsers(@RequestParam(defaultValue = "0") int page,
-                                         @RequestParam(defaultValue = "5") int size) {
-    return userClientService.getUsers(page, size);
+  public Page<UserClientResponseDto> getUsers(@RequestParam(value = "page", required = false) int page,
+                                              @RequestParam(value = "size", required = false) int size,
+                                              @RequestParam(required = false) String fullName,
+                                              @RequestParam(required = false) String surName) {
+    return userClientService.getUsers(page, size, fullName, surName);
   }
 }

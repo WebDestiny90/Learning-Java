@@ -11,5 +11,6 @@ import java.util.List;
 public interface UserClientMapper {
   UserClientEntity dtoToEntity(UserClientRequestDto userClientRequestDto);
 
-  List<UserClientResponseDto> toDto(List<UserClientEntity> userClientEntities);
+  UserClientResponseDto toDto(UserClientEntity userClientEntities);
+
 }

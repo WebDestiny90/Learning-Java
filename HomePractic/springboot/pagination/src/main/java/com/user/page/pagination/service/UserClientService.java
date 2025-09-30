@@ -3,11 +3,14 @@ package com.user.page.pagination.service;
 import com.user.page.pagination.dao.entity.UserClientEntity;
 import com.user.page.pagination.dao.repository.UserClientRepository;
 import com.user.page.pagination.dto.UserClientRequestDto;
+import com.user.page.pagination.dto.UserClientResponseDto;
 import com.user.page.pagination.mapper.UserClientMapper;
+import com.user.page.pagination.specification.UserClientSpecification;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 
@@ -21,8 +24,15 @@ public class UserClientService {
     userClientRepository.save(userClientMapper.dtoToEntity(userClientRequestDto));
   }
 
-  public Page<UserClientEntity> getUsers(int page, int size) {
+  public Page<UserClientResponseDto> getUsers(int page, int size, String fullName, String surName) {
     Pageable pageable = PageRequest.of(page, size);
-    return userClientRepository.findAll(pageable);
+
+    Specification<UserClientEntity> spec = Specification.allOf(
+            UserClientSpecification.hasName(fullName),
+            UserClientSpecification.hasSurName(surName)
+    );
+
+    Page<UserClientEntity> users = userClientRepository.findAll(spec, pageable);
+    return users.map(userClientMapper::toDto);
   }
 }
