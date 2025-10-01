@@ -1,7 +1,6 @@
 package com.user.page.pagination.specification;
 
 import com.user.page.pagination.dao.entity.UserClientEntity;
-import com.user.page.pagination.dto.UserClientResponseDto;
 import org.springframework.data.jpa.domain.Specification;
 
 public class UserClientSpecification {
@@ -16,6 +15,12 @@ public class UserClientSpecification {
     return (root, query, cb) ->
             surName == null ? cb.conjunction():
                     cb.like(cb.lower(root.get(surName)),"%"+ surName.toLowerCase() + "%");
+  }
+
+  public static Specification<UserClientEntity> hasMail(String email) {
+    return (root, query, cb) ->
+            email == null ? cb.conjunction() :
+                    cb.like(cb.lower(root.get(email)), "%" + email.toLowerCase() + "%");
   }
 
 }

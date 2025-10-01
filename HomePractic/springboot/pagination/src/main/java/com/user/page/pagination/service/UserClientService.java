@@ -2,6 +2,7 @@ package com.user.page.pagination.service;
 
 import com.user.page.pagination.dao.entity.UserClientEntity;
 import com.user.page.pagination.dao.repository.UserClientRepository;
+import com.user.page.pagination.dto.UserClientFilterRequest;
 import com.user.page.pagination.dto.UserClientRequestDto;
 import com.user.page.pagination.dto.UserClientResponseDto;
 import com.user.page.pagination.mapper.UserClientMapper;
@@ -24,12 +25,13 @@ public class  UserClientService {
     userClientRepository.save(userClientMapper.dtoToEntity(userClientRequestDto));
   }
 
-  public Page<UserClientResponseDto> getUsers(int page, int size, String fullName, String surName) {
-    Pageable pageable = PageRequest.of(page, size);
+  public Page<UserClientResponseDto> getUsers(UserClientFilterRequest filterRequest) {
+    Pageable pageable = PageRequest.of(filterRequest.getPage(), filterRequest.getSize());
 
     Specification<UserClientEntity> spec = Specification.allOf(
-            UserClientSpecification.hasName(fullName),
-            UserClientSpecification.hasSurName(surName)
+            UserClientSpecification.hasName(filterRequest.getFullName()),
+            UserClientSpecification.hasSurName(filterRequest.getLastName()),
+            UserClientSpecification.hasMail(filterRequest.getEmail())
     );
 
     Page<UserClientEntity> users = userClientRepository.findAll(spec, pageable);

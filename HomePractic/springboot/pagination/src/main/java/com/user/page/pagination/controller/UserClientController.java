@@ -1,6 +1,6 @@
 package com.user.page.pagination.controller;
 
-import com.user.page.pagination.dao.entity.UserClientEntity;
+import com.user.page.pagination.dto.UserClientFilterRequest;
 import com.user.page.pagination.dto.UserClientRequestDto;
 import com.user.page.pagination.dto.UserClientResponseDto;
 import com.user.page.pagination.service.UserClientService;
@@ -21,10 +21,7 @@ public class UserClientController {
   }
 
   @GetMapping("/get")
-  public Page<UserClientResponseDto> getUsers(@RequestParam(value = "page", required = false) int page,
-                                              @RequestParam(value = "size", required = false) int size,
-                                              @RequestParam(required = false) String fullName,
-                                              @RequestParam(required = false) String surName) {
-    return userClientService.getUsers(page, size, fullName, surName);
+  public Page<UserClientResponseDto> getUsers(UserClientFilterRequest filterRequest) {
+    return userClientService.getUsers(filterRequest);
   }
 }
