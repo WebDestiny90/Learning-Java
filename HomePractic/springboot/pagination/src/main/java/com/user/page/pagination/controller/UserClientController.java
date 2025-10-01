@@ -22,7 +22,7 @@ public class UserClientController {
   public ResponseEntity<String> addUser(@Valid @RequestBody UserClientRequestDto userClientRequestDto) {
     userClientService.addUser(userClientRequestDto);
     return ResponseEntity
-            .status(HttpStatus.CREATED) // 201 Created
+            .status(HttpStatus.CREATED)
             .body("User has been successfully created.");
   }
 

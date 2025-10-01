@@ -7,7 +7,6 @@ import com.user.page.pagination.dto.UserClientRequestDto;
 import com.user.page.pagination.dto.UserClientResponseDto;
 import com.user.page.pagination.mapper.UserClientMapper;
 import com.user.page.pagination.specification.UserClientSpecification;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
