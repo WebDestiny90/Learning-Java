@@ -14,6 +14,7 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class UserClientRequestDto {
   @NotBlank(message = "Name may not be empty")
+  @Size(min=3, max = 16)
   String fullName;
   @NotBlank(message = "Last name cannot be empty")
   String lastName;
