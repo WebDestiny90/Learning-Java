@@ -1,7 +1,6 @@
 package com.spring.order.customerserver.client;
 
 import com.spring.order.customerserver.dto.CountResponseDto;
-import com.spring.order.customerserver.dto.CustomerResponseDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
