@@ -24,7 +24,7 @@ public class CustomerService {
   private final CustomerMapper customerMapper;
   private final AuthRepository authRepository;
 
-  public void addUser(@RequestBody CustomerRequestDto requestDto) {
+  public void addUser(CustomerRequestDto requestDto) {
     customerRepository.save(customerMapper.requestToDto(requestDto));
   }
 
@@ -36,8 +36,6 @@ public class CustomerService {
       throw new InvalidPasswordException("Parol tələblərə cavab vermir!");
     }
   }
-
-
 
   public Page<CustomerResponseDto> getUser(CustomerFilterDto filterDto){
     Pageable pageable = PageRequest.of(filterDto.getPage(), filterDto.getSize());

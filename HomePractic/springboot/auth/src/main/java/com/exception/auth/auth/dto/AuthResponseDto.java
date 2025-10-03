@@ -7,7 +7,6 @@ import org.springframework.validation.annotation.Validated;
 
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Validated
 public class AuthResponseDto {
   String userName;
   String email;
