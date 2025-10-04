@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class ProductResponseEntity {
+public class ProductResponseDto {
   String title;
   String description;
   BigDecimal price;
