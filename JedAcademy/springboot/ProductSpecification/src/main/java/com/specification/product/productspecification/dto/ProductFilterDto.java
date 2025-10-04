@@ -22,6 +22,8 @@ public class ProductFilterDto {
   LocalDateTime createdStart;
   LocalDateTime createdEnd;
   Boolean active;
+  String sortBy = "id";
+  Boolean asc = true;
   Integer page = 0;
-  Integer size = 10; // default 10
+  Integer size = 6;
 }

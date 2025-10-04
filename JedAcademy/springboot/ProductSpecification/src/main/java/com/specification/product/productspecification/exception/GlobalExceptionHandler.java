@@ -23,8 +23,8 @@ public class GlobalExceptionHandler {
         return ResponseEntity.badRequest().body(errors);
     }
 
-  @ExceptionHandler(InvalidPasswordException.class)
-  public ResponseEntity<String> handleInvalidPassword(InvalidPasswordException ex) {
-    return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_ACCEPTABLE);
+  @ExceptionHandler(InvalidProductException.class)
+  public ResponseEntity<String> handleInvalidProduct(InvalidProductException ex) {
+    return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
   }
 }
