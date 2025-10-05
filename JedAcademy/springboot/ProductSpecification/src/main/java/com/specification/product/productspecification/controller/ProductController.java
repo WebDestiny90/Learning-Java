@@ -1,5 +1,6 @@
 package com.specification.product.productspecification.controller;
 
+import com.specification.product.productspecification.dto.ProductCreationResponse;
 import com.specification.product.productspecification.dto.ProductFilterDto;
 import com.specification.product.productspecification.dto.ProductRequestDto;
 import com.specification.product.productspecification.dto.ProductResponseDto;
@@ -25,14 +26,20 @@ public class ProductController {
   public ResponseEntity<String> addProduct(@Valid @RequestBody ProductRequestDto requestDto) {
     productService.addProduct(requestDto);
     return ResponseEntity.status(HttpStatus.CREATED)
-            .body("Products Successfully created!");
+            .body("Product Successfully created!");
   }
 
   @PostMapping("/addProducts")
-  public ResponseEntity<String> addProduct(@Valid @RequestBody List<ProductRequestDto> requestDto) {
-    productService.addProducts(requestDto);
+  public ResponseEntity<ProductCreationResponse> addProducts(@RequestBody List<@Valid ProductRequestDto> requestDto) {
+   List<Long> createdIds = productService.addProducts(requestDto);
+
+    ProductCreationResponse response = new ProductCreationResponse(
+            "Products Successfully created!",
+            createdIds
+    );
+
     return ResponseEntity.status(HttpStatus.CREATED)
-            .body("Product Successfully created!");
+            .body(response);
   }
 
   @PutMapping("/update/{id}")
@@ -43,7 +50,7 @@ public class ProductController {
     var updatedProduct = productService.updateProduct(requestDto, id);
     var responseDto = productMapper.toResponseDto(updatedProduct);
 
-    return ResponseEntity.ok(responseDto);
+    return ResponseEntity.status(HttpStatus.ACCEPTED).body(responseDto);
   }
 
   @GetMapping("/get")

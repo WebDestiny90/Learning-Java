@@ -27,8 +27,10 @@ public class ProductService {
     productRepository.save(productMapper.toRequestDto(requestDto));
   }
 
-  public void addProducts(List<ProductRequestDto> requestDto) {
-    productRepository.saveAll(productMapper.toRequestListDto(requestDto));
+  public List<Long> addProducts(List<ProductRequestDto> requestDto) {
+   List<ProductEntity> entities = productMapper.toRequestListDto(requestDto);
+   List<ProductEntity> savedEntities = productRepository.saveAll(entities);
+   return savedEntities.stream().map(ProductEntity::getId).toList();
   }
 
   public ProductEntity updateProduct(ProductRequestDto requestDto, Long id) {

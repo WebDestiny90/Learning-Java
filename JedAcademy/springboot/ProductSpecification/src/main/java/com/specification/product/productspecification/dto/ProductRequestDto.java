@@ -11,7 +11,6 @@ import java.time.LocalDateTime;
 
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Validated
 public class ProductRequestDto {
   @NotBlank(message = "Title must not be blank")
   @Size(min = 3, max = 100, message = "Title length must be between 3 and 100 characters")
