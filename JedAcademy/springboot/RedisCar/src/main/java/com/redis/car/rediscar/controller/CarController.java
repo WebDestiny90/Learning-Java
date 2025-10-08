@@ -19,8 +19,8 @@ public class CarController {
     carService.addCar(requestDto);
   }
 
-  @GetMapping("get")
-  public List<CarResponseDto> getCar() {
-    return carService.getCars();
+  @GetMapping("/{id}")
+  public CarResponseDto getCar(@PathVariable Long id) {
+    return carService.getCars(id);
   }
 }
