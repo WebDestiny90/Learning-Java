@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3-update-employee-table
+      author: Destinyy
+      changes:
+        - renameColumn:
+            tableName: employee
+            oldColumnName: name
+            newColumnName: employee_name
+            columnDataType: VARCHAR(255)
