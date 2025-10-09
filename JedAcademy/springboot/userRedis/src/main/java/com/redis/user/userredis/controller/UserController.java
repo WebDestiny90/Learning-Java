@@ -2,7 +2,9 @@ package com.redis.user.userredis.controller;
 
 import com.redis.user.userredis.dto.UserRequestDto;
 import com.redis.user.userredis.dto.UserResponseDto;
+import com.redis.user.userredis.exception.InvalidAgeException;
 import com.redis.user.userredis.service.UserService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,7 +19,7 @@ public class UserController {
   private final UserService userService;
 
   @PostMapping("/add")
-  public void addUser(@RequestBody UserRequestDto requestDto) {
+  public void addUser(@Valid @RequestBody UserRequestDto requestDto) {
     userService.addUser(requestDto);
   }
 
@@ -35,18 +37,6 @@ public class UserController {
   public List<UserResponseDto> getUsers() {
     return userService.getUsers();
   }
-
-  public void time() {
-    LocalDateTime now = LocalDateTime.now();
-    LocalDateTime after = now.plusMinutes(5);
-
-    var formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-
-    System.out.println(now.format(formatter));
-    System.out.println(after.format(formatter));
-  }
-
-
 }
 
 

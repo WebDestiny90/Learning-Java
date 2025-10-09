@@ -3,7 +3,9 @@ package com.redis.user.userredis.service;
 import com.redis.user.userredis.dao.repository.UserRepository;
 import com.redis.user.userredis.dto.UserRequestDto;
 import com.redis.user.userredis.dto.UserResponseDto;
+import com.redis.user.userredis.exception.InvalidAgeException;
 import com.redis.user.userredis.mapper.UserMapper;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -19,8 +21,12 @@ public class UserService {
   private final UserMapper userMapper;
   private final RedisService redisService;
 
+  @Transactional
   public void addUser(UserRequestDto requestDto) {
     var user = userRepository.save(userMapper.requestToEntity(requestDto));
+    if (user.getAge() == null || user.getAge() <= 0) {
+      throw new InvalidAgeException("Yaş tələblərə cavab vermir!");
+    }
     UserResponseDto userResponseDto = userMapper.responseToDto(user);
     redisService.setValue(USER_PREFIX + user.getId(), userResponseDto);
   }
