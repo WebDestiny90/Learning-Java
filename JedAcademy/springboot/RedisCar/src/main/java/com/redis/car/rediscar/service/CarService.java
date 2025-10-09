@@ -31,8 +31,8 @@ public class CarService {
       return (CarResponseDto) redisData;
     }
 
-    log.info("Loading Car from Repository (Cache Miss) for ID: {}", id);
-    var entity = carRepository.findById(id).orElseThrow(() -> new RuntimeException("Car not found with ID: " + id));
+      log.info("Loading Car from Repository (Cache Miss) for ID: {}", id);
+      var entity = carRepository.findById(id).orElseThrow(() -> new RuntimeException("Car not found with ID: " + id));
 
     CarResponseDto responseDto = carMapper.entityToResponseDto(entity);
 
