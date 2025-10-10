@@ -4,6 +4,7 @@ import com.redis.user.userredis.dao.repository.UserRepository;
 import com.redis.user.userredis.dto.UserRequestDto;
 import com.redis.user.userredis.dto.UserResponseDto;
 import com.redis.user.userredis.exception.InvalidAgeException;
+import com.redis.user.userredis.exception.InvalidIdException;
 import com.redis.user.userredis.mapper.UserMapper;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -24,8 +25,8 @@ public class UserService {
   @Transactional
   public void addUser(UserRequestDto requestDto) {
     var user = userRepository.save(userMapper.requestToEntity(requestDto));
-    if (user.getAge() == null || user.getAge() <= 0) {
-      throw new InvalidAgeException("Yaş tələblərə cavab vermir!");
+    if (user.getAge() <= 18) {
+      throw new InvalidAgeException("The provided age is not valid!");
     }
     UserResponseDto userResponseDto = userMapper.responseToDto(user);
     redisService.setValue(USER_PREFIX + user.getId(), userResponseDto);
@@ -44,7 +45,7 @@ public class UserService {
       return (UserResponseDto) redisData;
     }
     log.info("Loading Car from Repository (Cache Miss) for ID: {}", id);
-    var entity = userRepository.findById(id).orElseThrow(() -> new RuntimeException("User not found with ID: " + id));
+    var entity = userRepository.findById(id).orElseThrow(() -> new InvalidIdException("User not found by id:" +id));
     UserResponseDto userResponseDto = userMapper.responseToDto(entity);
     redisService.setValue(USER_PREFIX + id, userResponseDto);
     return userResponseDto;

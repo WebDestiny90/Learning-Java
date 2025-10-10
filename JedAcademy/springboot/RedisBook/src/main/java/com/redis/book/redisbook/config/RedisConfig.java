@@ -1,4 +1,4 @@
-package com.redis.user.userredis.config;
+package com.redis.book.redisbook.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -14,7 +14,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 public class RedisConfig {
 
   @Value("${spring.data.redis.host}")
-  private String REDIS_HOST;
+  private String redisHost;
 
   @Value("${spring.data.redis.port}")
   private int redisPort;
@@ -25,7 +25,7 @@ public class RedisConfig {
   @Bean
   public RedisConnectionFactory redisConnectionFactory() {
     RedisStandaloneConfiguration config = new RedisStandaloneConfiguration();
-    config.setHostName(REDIS_HOST);
+    config.setHostName(redisHost);
     config.setPort(redisPort);
     config.setPassword(redisPassword);
 
