@@ -3,6 +3,8 @@ package com.redis.book.redisbook.service;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
+import java.time.Duration;
+
 @Service
 public class RedisService {
   private final RedisTemplate<String, Object> redisTemplate;
@@ -13,6 +15,10 @@ public class RedisService {
 
   public void setValue(String key, Object value) {
     redisTemplate.opsForValue().set(key, value);
+  }
+
+  public void setValueS(String key, Object value, int seconds) {
+    redisTemplate.opsForValue().set(key, value, Duration.ofSeconds(seconds));
   }
 
   public Object getValue(String key) {
