@@ -17,8 +17,8 @@ public class CarController {
   private final CarService carService;
 
   @PostMapping("/add")
-  public Long addCar(@Valid @RequestBody CarRequestDto requestDto) {
-    return carService.addCar(requestDto);
+  public void addCar(@Valid @RequestBody CarRequestDto requestDto) {
+     carService.addCar(requestDto);
   }
 
   @PostMapping("/addcars")

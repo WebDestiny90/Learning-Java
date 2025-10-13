@@ -6,6 +6,7 @@ import com.redis.specification.page.redisspecificationpage.dto.CarRequestDto;
 import com.redis.specification.page.redisspecificationpage.dto.CarResponseDto;
 import com.redis.specification.page.redisspecificationpage.dto.PageResponse;
 import com.redis.specification.page.redisspecificationpage.mapper.CarMapper;
+import com.redis.specification.page.redisspecificationpage.service.rabbit.MessageProducer;
 import com.redis.specification.page.redisspecificationpage.util.LogUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -24,10 +25,13 @@ public class CarService {
   private final CarRepository carRepository;
   private final CarMapper carMapper;
   private final RedisService redisService;
+  private final MessageProducer messageProducer;
 
-  public Long addCar(CarRequestDto requestDto) {
-    var cars = carRepository.save(carMapper.requestDtoToEntity(requestDto));
-    return cars.getId();
+  public void addCar(CarRequestDto requestDto) {
+    messageProducer.sendMessage(requestDto);
+
+//    var cars = carRepository.save(carMapper.requestDtoToEntity(requestDto));
+//    return cars.getId();
   }
 
   public List<Long> addCars(List<CarRequestDto> requestDtoList) {
