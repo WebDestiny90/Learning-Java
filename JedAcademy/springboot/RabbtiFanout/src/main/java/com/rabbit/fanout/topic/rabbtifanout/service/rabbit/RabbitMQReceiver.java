@@ -23,7 +23,6 @@ public class RabbitMQReceiver {
   public void receiveUserMessage(UserRequestDto requestDto) {
     log.info("Received message from queue {}: {}", RabbitMQConfig.USER_QUEUE, requestDto);
     saveUser(requestDto);
-    saveLogs(requestDto);
   }
 
   private void saveUser(UserRequestDto requestDto) {
@@ -36,13 +35,14 @@ public class RabbitMQReceiver {
     }
   }
 
-  private void saveLogs(UserRequestDto requestDto) {
+  @RabbitListener(queues = RabbitMQConfig.LOG_QUEUE)
+  public void receiveLogMessage(String message) {
     try {
-      String key = "user-log:" + System.currentTimeMillis();
-      redisService.setValue(key, requestDto);
-      log.info("Log saved successfully to Redis:");
+      String key = "system-log:" + System.currentTimeMillis();
+      redisService.setValue(key, message);
+      log.info("Log saved successfully to Redis: {}", message);
     } catch (Exception e) {
-      log.error("Failed to save log in Redis: {}", requestDto, e);
+      log.error("Failed to save log in Redis: {}", message, e);
     }
   }
 }

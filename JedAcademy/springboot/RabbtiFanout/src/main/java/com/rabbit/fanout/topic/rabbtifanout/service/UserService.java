@@ -19,11 +19,9 @@ public class UserService {
 
   public void addUser(UserRequestDto requestDto) {
     messageProducer.sendUserNotification(requestDto);
+    String logMessage = "User creation request sent for: " + requestDto.getFullName();
+    messageProducer.sendLogNotification(logMessage);
   }
-
-//  public void addLog(UserRequestDto requestDto) {
-//    messageProducer.sendLogNotification(requestDto);
-//  }
 
   public List<UserResponseDto> getUser() {
     return userMapper.responseEntityListToDtoList(userRepository.findAll());
