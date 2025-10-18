@@ -4,7 +4,9 @@ import com.manytoone.manytoone.dao.entity.CategoryEntity;
 import com.manytoone.manytoone.dto.CategoryRequestDto;
 import com.manytoone.manytoone.dto.CategoryResponseDto;
 import org.mapstruct.Mapper;
+import org.mapstruct.AfterMapping;
 import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
 
 @Mapper(componentModel = "spring")
 public interface CategoryMapper {

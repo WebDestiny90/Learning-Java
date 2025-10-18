@@ -14,8 +14,14 @@ public class CategoryService {
   private final CategoryMapper categoryMapper;
 
   public Long addCategory(CategoryRequestDto requestDto) {
-    var categoryEntity = categoryRepository.save(categoryMapper.RequestDtoToEntity(requestDto));
-    return categoryEntity.getId();
+    var categoryEntity = categoryMapper.RequestDtoToEntity(requestDto);
+
+    if (categoryEntity.getProducts() != null) {
+      categoryEntity.getProducts().forEach(p -> p.setCategory(categoryEntity));
+    }
+
+    var saved = categoryRepository.save(categoryEntity);
+    return saved.getId();
   }
 
   public CategoryResponseDto getCategoryById(Long id) {

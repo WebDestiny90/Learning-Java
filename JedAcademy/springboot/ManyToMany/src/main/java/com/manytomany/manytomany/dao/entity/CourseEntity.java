@@ -1,9 +1,10 @@
-package com.manytoone.manytoone.dao.entity;
+package com.manytomany.manytomany.dao.entity;
 
-import com.manytoone.manytoone.util.ColorEnum;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -11,15 +12,13 @@ import lombok.experimental.FieldDefaults;
 @Data
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "product")
-public class ProductEntity {
+@Table(name = "course")
+public class CourseEntity {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   Long id;
-  String name;
-  Double price;
-  String color;
-  @ManyToOne
-  @JoinColumn(name = "category_id")
-  CategoryEntity category;
+  String title;
+
+  @ManyToMany(mappedBy = "courses")
+  List<StudentEntity> students;
 }

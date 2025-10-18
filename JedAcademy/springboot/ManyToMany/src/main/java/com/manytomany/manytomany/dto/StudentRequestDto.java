@@ -1,4 +1,4 @@
-package com.manytoone.manytoone.dto;
+package com.manytomany.manytomany.dto;
 
 import lombok.AccessLevel;
 import lombok.Data;
@@ -8,8 +8,9 @@ import java.util.List;
 
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class CategoryRequestDto {
-  String title;
-  String description;
-  List<ProductRequestDto> products;
+public class StudentRequestDto {
+  String fullName;
+  String surName;
+  Integer age;
+  List<Long> courseIds;
 }

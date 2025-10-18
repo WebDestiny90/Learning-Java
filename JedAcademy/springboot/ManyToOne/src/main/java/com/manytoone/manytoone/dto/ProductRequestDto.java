@@ -4,12 +4,10 @@ import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
-import java.util.List;
-
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class CategoryRequestDto {
-  String title;
-  String description;
-  List<ProductRequestDto> products;
+public class ProductRequestDto {
+  String name;
+  Double price;
+  String color;
 }
