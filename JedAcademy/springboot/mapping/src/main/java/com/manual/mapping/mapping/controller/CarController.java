@@ -9,8 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
-import java.util.Objects;
 
 @RestController
 @RequestMapping("api/v1/car")
@@ -34,8 +32,9 @@ public class CarController {
   }
 
   @DeleteMapping("/{id}")
-  public Long deleteCar(@PathVariable Long id) {
-   return carService.deleteCar(id);
+  public ResponseEntity<String> deleteCar(@PathVariable Long id) {
+   carService.deleteCar(id);
+   return ResponseEntity.status(HttpStatus.OK).body("Car with id:" + id + " deleted successfully");
   }
 
   @GetMapping("/{id}")

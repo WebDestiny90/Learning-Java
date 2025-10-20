@@ -44,12 +44,11 @@ public class CarService {
     return carMapper.entityToDto(carSave);
   }
 
-  public Long deleteCar(Long id) {
+  public void deleteCar(Long id) {
     if (!carRepository.existsById(id)) {
       throw new CarNotFoundException("Car not found with id: " + id);
     }
     carRepository.deleteById(id);
-    return id;
   }
 
   public CarResponseDto getCarById(Long id) {
