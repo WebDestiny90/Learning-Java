@@ -26,9 +26,9 @@ public class CarMapper {
             .build();
   }
 
-  public List<CarEntity> requestDtoListToEntityList(List<CarRequestDto> requestDtoList) {
+  public List<CarEntity> requestDtoListToEntityList(List<CarRequestDto> requestDtoLists) {
     List<CarEntity> requestList = new ArrayList<>();
-    for (CarRequestDto cars : requestDtoList) {
+    for (CarRequestDto cars : requestDtoLists) {
       requestList.add(requestDtoToEntity(cars));
     }
     return requestList;
