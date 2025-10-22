@@ -4,6 +4,7 @@ import com.schedule.user.scheduleuser.dto.UserRequestDto;
 import com.schedule.user.scheduleuser.dto.UserResponseDto;
 import com.schedule.user.scheduleuser.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,8 +21,9 @@ public class UserController {
   }
 
   @GetMapping("/get")
-  public List<UserResponseDto> getUsers() {
-    return userService.getUsers();
+  public ResponseEntity<List<UserResponseDto>> getUsers() {
+    var users = userService.getUsers();
+    return users.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(users);
   }
 
 
