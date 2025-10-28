@@ -25,12 +25,12 @@ public class UserController {
 
   @PostMapping("{firstName}")
   public ResponseEntity<String> jwtBuilder(@PathVariable String firstName) {
-    return ResponseEntity.ok(jwtService.generateToken(firstName));
+    return ResponseEntity.ok(userService.nameToToken(firstName));
   }
 
   @GetMapping
   public ResponseEntity<String> jwtGet(@RequestHeader String key) {
-    return ResponseEntity.ok(jwtService.valid(key));
+    return ResponseEntity.ok(userService.decoder(key));
   }
 
   @GetMapping("/{id}")

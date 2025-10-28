@@ -18,9 +18,15 @@ public class UserService {
   private final JwtService jwtService;
 
   public Long addUser(UserRequestDto requestDto) {
-    UserEntity user = userMapper.requestDtoToEntity(requestDto);
-    user.setUserPassword(jwtService.generateToken(String.valueOf(requestDto.getUserPassword())));
-    return userRepository.save(user).getId();
+    return userRepository.save(userMapper.requestDtoToEntity(requestDto)).getId();
+  }
+
+  public String nameToToken(String firstName) {
+    return jwtService.generateToken(firstName);
+  }
+
+  public String decoder(String tokenKey) {
+    return jwtService.valid(tokenKey);
   }
 
   public UserResponseDto getUserById(Long id) {

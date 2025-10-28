@@ -21,9 +21,9 @@ public class JwtService {
     return Keys.hmacShaKeyFor(SECRET_KEY.getBytes());
   }
 
-  public String generateToken(String valueToHide) {
+  public String generateToken(String firstName) {
     return Jwts.builder()
-            .setSubject(valueToHide)
+            .setSubject(firstName)
             .setIssuedAt(new Date(System.currentTimeMillis()))
             .setExpiration(new Date(System.currentTimeMillis() + Long.parseLong(EXPIRATION_TIME)))
             .signWith(getSigningKey(), SignatureAlgorithm.HS256)
