@@ -1,6 +1,7 @@
 package com.springsecurity.springsecurity.controller;
 
 import com.springsecurity.springsecurity.dto.UserRequestDto;
+import com.springsecurity.springsecurity.dto.UserTokenDto;
 import com.springsecurity.springsecurity.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -19,5 +20,10 @@ public class UserSignController {
   @PostMapping("/up")
   public ResponseEntity<Long> signUp(@Valid @RequestBody UserRequestDto requestDto) {
    return ResponseEntity.ok(userService.signUp(requestDto));
+  }
+
+  @PostMapping("/in")
+  public ResponseEntity<UserTokenDto> signIn(@RequestBody UserRequestDto requestDto) {
+   return ResponseEntity.ok(new UserTokenDto(userService.signIn(requestDto)));
   }
 }
