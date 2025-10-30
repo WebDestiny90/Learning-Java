@@ -1,13 +1,13 @@
 package com.springsecurity.springsecurity.service;
 
-
 import com.springsecurity.springsecurity.dao.repository.UserRepository;
-import com.springsecurity.springsecurity.dto.EmailValidator;
 import com.springsecurity.springsecurity.dto.UserRequestDto;
 import com.springsecurity.springsecurity.dto.UserResponseDto;
 import com.springsecurity.springsecurity.exception.InvalidEmailException;
-import com.springsecurity.springsecurity.exception.InvalidEmailProvideException;
+import com.springsecurity.springsecurity.exception.InvalidPasswordException;
+import com.springsecurity.springsecurity.exception.UserNotFoundException;
 import com.springsecurity.springsecurity.mapper.UserMapper;
+import com.springsecurity.springsecurity.util.helper.ValidationUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -27,9 +27,7 @@ public class UserService {
   public Long signUp(UserRequestDto requestDto) {
     var userEntity = userRepository.findByEmail(requestDto.getEmail());
 
-    if (!EmailValidator.isValidEmail(requestDto.getEmail())) {
-      throw new InvalidEmailProvideException("Please provide a valid email address");
-    }
+    ValidationUtil.validateUser(requestDto);
 
     if (userEntity.isPresent()) {
       throw new InvalidEmailException("User with this email already exists.");
@@ -39,17 +37,18 @@ public class UserService {
   }
 
   public String signIn(UserRequestDto requestDto) {
-    var userEntity = userRepository.findByEmail(requestDto.getEmail()).orElseThrow(()-> new RuntimeException("user not found"));
+    var userEntity = userRepository.findByEmail(requestDto.getEmail())
+            .orElseThrow(()-> new UserNotFoundException("User with this email does not exist"));
     if (passwordEncoder.matches(requestDto.getPassword(), userEntity.getPassword())) {
       return jwtService.generateToken(requestDto.getEmail());
     }
-    throw new RuntimeException("Password incorrect");
+    throw new InvalidPasswordException("Invalid password. Please try again.");
   }
 
-//  public Long addUser(UserRequestDto requestDtoDto) {
-//    var addUser = userRepository.save(userMapper.requestDtoToEntity(requestDtoDto));
-//    return addUser.getId();
-//  }
+  public Long addUser(UserRequestDto requestDtoDto) {
+    var addUser = userRepository.save(userMapper.toEntity(requestDtoDto));
+    return addUser.getId();
+  }
 
   public UserResponseDto getUserById(Long id) {
     return userMapper.entityToDto(userRepository.findById(id).orElseThrow(() -> new RuntimeException("User not found with id:" + id)));

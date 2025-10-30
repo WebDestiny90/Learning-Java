@@ -1,7 +1,5 @@
 package com.springsecurity.springsecurity.controller;
 
-
-
 import com.springsecurity.springsecurity.dto.UserRequestDto;
 import com.springsecurity.springsecurity.dto.UserResponseDto;
 import com.springsecurity.springsecurity.service.UserService;
@@ -16,10 +14,10 @@ import java.util.List;
 public class UserController {
   private final UserService userService;
 
-//  @PostMapping("/add")
-//  public Long addUser(@RequestBody UserRequestDto requestDto) {
-//    return userService.addUser(requestDto);
-//  }
+  @PostMapping("/add")
+  public Long addUser(@RequestBody UserRequestDto requestDto) {
+    return userService.addUser(requestDto);
+  }
 
   @GetMapping("/{id}")
   public UserResponseDto getUserById(@PathVariable Long id) {
