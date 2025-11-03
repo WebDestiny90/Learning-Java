@@ -1,0 +1,81 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1-create-cars-table
+      author: Destiny
+      changes:
+        - createTable:
+            tableName: cars
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: pk_cars
+
+              - column:
+                  name: brand
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: model
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: manufacture_year
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: type
+                  type: VARCHAR(50)
+              - column:
+                  name: transmission
+                  type: VARCHAR(50)
+              - column:
+                  name: fuel_type
+                  type: VARCHAR(50)
+              - column:
+                  name: seats
+                  type: INT
+              - column:
+                  name: doors
+                  type: INT
+              - column:
+                  name: engine_volume
+                  type: DOUBLE
+
+              - column:
+                  name: horsepower
+                  type: INT
+              - column:
+                  name: fuel_consumption
+                  type: DOUBLE
+              - column:
+                  name: air_conditioner
+                  type: BOOLEAN
+              - column:
+                  name: gps
+                  type: BOOLEAN
+
+              - column:
+                  name: daily_price
+                  type: DOUBLE
+                  constraints:
+                    nullable: false
+              - column:
+                  name: availability_status
+                  type: VARCHAR(50)
+              - column:
+                  name: location
+                  type: VARCHAR(255)
+
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
+              - column:
+                  name: updated_at
+                  type: TIMESTAMP
