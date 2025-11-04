@@ -6,7 +6,6 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-
 import java.time.LocalDateTime;
 
 @Entity
@@ -20,39 +19,65 @@ public class CarEntity {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   Long id;
+
   @Column(nullable = false, length = 100)
   String brand;
+
   @Column(nullable = false, length = 100)
   String model;
-  @Column(nullable = false)
+
+  @Column(name = "manufacture_year", nullable = false)
   Integer manufactureYear;
-  @Column(nullable = false, length = 100)
+
   @Enumerated(EnumType.STRING)
+  @Column(nullable = false, length = 100)
   CarColor color;
+
   @Column(nullable = false, length = 100, unique = true)
   String plate;
+
   @Enumerated(EnumType.STRING)
   @Column(length = 50)
   CarType type;
+
   @Enumerated(EnumType.STRING)
   @Column(length = 50)
   TransmissionType transmission;
+
   @Enumerated(EnumType.STRING)
+  @Column(name = "fuel_type", length = 50)
   FuelType fuelType;
+
   Integer seats;
   Integer doors;
+
+  @Column(name = "engine_volume")
   Double engineVolume;
+
   Integer horsepower;
+
+  @Column(name = "fuel_consumption")
   Double fuelConsumption;
+
+  @Column(name = "air_conditioner")
   Boolean airConditioner;
+
   Boolean gps;
-  @Column(nullable = false)
+
+  @Column(name = "daily_price", nullable = false)
   Double dailyPrice;
+
   @Enumerated(EnumType.STRING)
-  @Column(length = 50)
+  @Column(name = "availability_status", length = 50)
   AvailabilityStatus availabilityStatus;
+
+  String location;
+
   @CreationTimestamp
+  @Column(name = "created_at")
   LocalDateTime createdAt;
+
   @UpdateTimestamp
+  @Column(name = "updated_at")
   LocalDateTime updatedAt;
 }

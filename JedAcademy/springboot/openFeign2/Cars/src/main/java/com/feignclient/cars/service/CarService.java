@@ -5,9 +5,12 @@ import com.feignclient.cars.dao.repository.CarRepository;
 import com.feignclient.cars.dto.CarFilterDto;
 import com.feignclient.cars.dto.CarRequestDto;
 import com.feignclient.cars.dto.CarResponseDto;
+import com.feignclient.cars.dto.PageResponse;
 import com.feignclient.cars.mapper.CarMapper;
 import com.feignclient.cars.specification.CarSpecification;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
@@ -19,23 +22,23 @@ public class CarService {
   private final CarRepository carRepository;
   private final CarMapper carMapper;
 
-  public Long addCar(CarRequestDto requestDto) {
-    return carRepository.save(carMapper.dtoToEntity(requestDto)).getId();
-  }
-
-  public List<Long> addCars(List<CarRequestDto> requestDtoList) {
-    return carRepository.saveAll(carMapper.dtoListToEntityList(requestDtoList))
-            .stream().map(CarEntity::getId).toList();
-  }
-
   public CarResponseDto getCarById(Long id) {
     return carMapper.entityToDto(
             carRepository.findById(id).orElseThrow(
                     ()-> new RuntimeException("Car not foud with id: " + id)));
   }
 
-  public List<CarResponseDto> getCars(CarFilterDto filterDto) {
+  public PageResponse<CarResponseDto> getCars(CarFilterDto filterDto) {
     Specification<CarEntity> spec = CarSpecification.filter(filterDto);
-    return carMapper.entityListToDtoList(carRepository.findAll(spec));
+    Page<CarEntity> pageData = carRepository.findAll(spec, PageRequest.of(filterDto.getPage(), filterDto.getSize()));
+    var dtoList = carMapper.entityListToDtoList(pageData.getContent());
+    return new PageResponse<>(
+            dtoList,
+            pageData.getNumber(),
+            pageData.getSize(),
+            pageData.getTotalElements(),
+            pageData.getTotalPages()
+
+    );
   }
 }

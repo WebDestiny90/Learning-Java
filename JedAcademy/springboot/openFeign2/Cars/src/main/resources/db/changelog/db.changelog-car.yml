@@ -80,9 +80,6 @@ databaseChangeLog:
               - column:
                   name: availability_status
                   type: VARCHAR(50)
-              - column:
-                  name: location
-                  type: VARCHAR(255)
 
               - column:
                   name: created_at

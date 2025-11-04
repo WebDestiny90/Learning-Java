@@ -9,8 +9,6 @@ import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface CarMapper {
-  CarEntity dtoToEntity(CarRequestDto requestDto);
-  List<CarEntity> dtoListToEntityList(List<CarRequestDto> requestDtoList);
   CarResponseDto entityToDto(CarEntity responseDto);
   List<CarResponseDto> entityListToDtoList(List<CarEntity> responseDtoList);
 }

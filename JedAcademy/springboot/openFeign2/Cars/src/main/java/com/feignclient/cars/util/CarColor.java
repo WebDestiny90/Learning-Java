@@ -8,5 +8,6 @@ public enum CarColor {
   GREEN,
   YELLOW,
   ORANGE,
-  GRAY
+  GRAY,
+  SILVER
 }
