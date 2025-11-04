@@ -11,6 +11,6 @@ import java.util.List;
 public interface CarMapper {
   CarEntity dtoToEntity(CarRequestDto requestDto);
   List<CarEntity> dtoListToEntityList(List<CarRequestDto> requestDtoList);
-  CarResponseDto entityToDto(CarResponseDto responseDto);
+  CarResponseDto entityToDto(CarEntity responseDto);
   List<CarResponseDto> entityListToDtoList(List<CarEntity> responseDtoList);
 }
