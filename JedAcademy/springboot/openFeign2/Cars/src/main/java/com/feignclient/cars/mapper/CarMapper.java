@@ -1,7 +1,6 @@
 package com.feignclient.cars.mapper;
 
 import com.feignclient.cars.dao.entity.CarEntity;
-import com.feignclient.cars.dto.CarRequestDto;
 import com.feignclient.cars.dto.CarResponseDto;
 import org.mapstruct.Mapper;
 

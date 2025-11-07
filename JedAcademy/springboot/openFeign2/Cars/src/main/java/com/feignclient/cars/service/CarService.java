@@ -3,7 +3,6 @@ package com.feignclient.cars.service;
 import com.feignclient.cars.dao.entity.CarEntity;
 import com.feignclient.cars.dao.repository.CarRepository;
 import com.feignclient.cars.dto.CarFilterDto;
-import com.feignclient.cars.dto.CarRequestDto;
 import com.feignclient.cars.dto.CarResponseDto;
 import com.feignclient.cars.dto.PageResponse;
 import com.feignclient.cars.mapper.CarMapper;
@@ -14,7 +13,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -38,7 +36,6 @@ public class CarService {
             pageData.getSize(),
             pageData.getTotalElements(),
             pageData.getTotalPages()
-
     );
   }
 }

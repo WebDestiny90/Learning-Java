@@ -12,11 +12,11 @@ databaseChangeLog:
                   autoIncrement: true
                   constraints:
                     primaryKey: true
-                    primaryKeyName: pk_cars
+                    primaryKeyName: pk_reservation
 
               - column:
-                  name: brand
-                  type: VARCHAR(100)
+                  name: user_id
+                  type: LONG
                   constraints:
                     nullable: false
               - column:

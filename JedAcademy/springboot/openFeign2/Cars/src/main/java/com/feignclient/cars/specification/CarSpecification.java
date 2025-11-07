@@ -6,6 +6,8 @@ import com.feignclient.cars.util.*;
 import org.springframework.data.jpa.domain.Specification;
 
 public class CarSpecification {
+
+
   public static Specification<CarEntity> hasBrand(String brand) {
     return (root, query, cb) ->
             brand == null ? cb.conjunction() : cb.like(cb.lower(root.get("brand")), "%" + brand.toLowerCase() + "%");
@@ -108,6 +110,7 @@ public class CarSpecification {
             hasDoors(filterDto.getDoors()),
             hasEngine(filterDto.getEngineVolume()),
             hasHorse(filterDto.getHorsepower()),
+            hasFuelConsumption(filterDto.getFuelConsumption()),
             hasFuel(filterDto.getFuelType()),
             hasConditioner(filterDto.getAirConditioner()),
             hasGps(filterDto.getGps()),

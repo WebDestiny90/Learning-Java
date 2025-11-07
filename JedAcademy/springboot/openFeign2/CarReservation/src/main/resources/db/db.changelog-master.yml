@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/db.changelog-car.yml
+  - include:
+      file: db/changelog/insert-cars.sql
