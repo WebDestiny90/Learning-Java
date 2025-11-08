@@ -34,7 +34,9 @@ public class ReservationEntity {
   Long userId;
   @Column(name = "car_id")
   Long carId;
+  @Column(name = "start_date")
   LocalDateTime startDate;
+  @Column(name = "end_date")
   LocalDateTime endDate;
   @Enumerated(EnumType.STRING)
   Status status;
