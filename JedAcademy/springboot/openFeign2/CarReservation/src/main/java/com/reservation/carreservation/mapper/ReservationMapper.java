@@ -7,21 +7,20 @@ import org.springframework.stereotype.Component;
 
 import com.reservation.carreservation.dao.entity.ReservationEntity;
 import com.reservation.carreservation.dto.ReservationRequestDto;
-import com.reservation.carreservation.dto.ReservationResponsetDto;
+import com.reservation.carreservation.dto.ReservationResponseDto;
 
 @Component
 public class ReservationMapper {
-  ReservationEntity requestDtoToEntityDto(ReservationRequestDto requestDto) {
+ public ReservationEntity requestDtoToEntityDto(ReservationRequestDto requestDto) {
     return ReservationEntity.builder()
         .userId(requestDto.getUserId())
         .carId(requestDto.getCarId())
         .startDate(requestDto.getStartDate())
         .endDate(requestDto.getEndDate())
-        .status(requestDto.getStatus())
         .build();
   }
 
-  List<ReservationEntity> requestListDtoToEntityList(List<ReservationRequestDto> requestDtoList) {
+  public List<ReservationEntity> requestListDtoToEntityList(List<ReservationRequestDto> requestDtoList) {
     List<ReservationEntity> requestList = new ArrayList<>();
     for (ReservationRequestDto list : requestDtoList) {
       requestList.add(requestDtoToEntityDto(list));
@@ -29,8 +28,8 @@ public class ReservationMapper {
     return requestList;
   }
 
-  ReservationResponsetDto entityToDtoResponse(ReservationEntity responseDto) {
-    return ReservationResponsetDto.builder()
+  public ReservationResponseDto entityToDtoResponse(ReservationEntity responseDto) {
+    return ReservationResponseDto.builder()
         .userId(responseDto.getUserId())
         .carId(responseDto.getCarId())
         .startDate(responseDto.getStartDate())
@@ -39,8 +38,8 @@ public class ReservationMapper {
         .build();
   }
 
-  List<ReservationResponsetDto> responseListToEntityList(List<ReservationEntity> responseDtoList) {
-    List<ReservationResponsetDto> responseList = new ArrayList<>();
+  public List<ReservationResponseDto> responseListToEntityList(List<ReservationEntity> responseDtoList) {
+    List<ReservationResponseDto> responseList = new ArrayList<>();
     for (ReservationEntity response : responseDtoList) {
       responseList.add(entityToDtoResponse(response));
     }

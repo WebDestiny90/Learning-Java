@@ -15,5 +15,4 @@ public class ReservationRequestDto {
   Long carId;
   LocalDateTime startDate;
   LocalDateTime endDate;
-  Status status;
 }

@@ -12,7 +12,8 @@ import lombok.experimental.FieldDefaults;
 @Data
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class ReservationResponsetDto {
+public class ReservationResponseDto {
+  Long id;
   Long userId;
   Long carId;
   LocalDateTime startDate;
