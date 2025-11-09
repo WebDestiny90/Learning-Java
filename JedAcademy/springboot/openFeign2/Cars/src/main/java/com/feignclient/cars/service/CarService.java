@@ -5,8 +5,11 @@ import com.feignclient.cars.dao.repository.CarRepository;
 import com.feignclient.cars.dto.CarFilterDto;
 import com.feignclient.cars.dto.CarResponseDto;
 import com.feignclient.cars.dto.PageResponse;
+import com.feignclient.cars.exception.CarNotFoundException;
 import com.feignclient.cars.mapper.CarMapper;
 import com.feignclient.cars.specification.CarSpecification;
+import com.feignclient.cars.util.AvailabilityStatus;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -23,7 +26,7 @@ public class CarService {
   public CarResponseDto getCarById(Long id) {
     return carMapper.entityToDto(
             carRepository.findById(id).orElseThrow(
-                    ()-> new RuntimeException("Car not foud with id: " + id)));
+                    ()-> new CarNotFoundException("Car not foud with id: " + id)));
   }
 
   public PageResponse<CarResponseDto> getCars(CarFilterDto filterDto) {
@@ -38,4 +41,5 @@ public class CarService {
             pageData.getTotalPages()
     );
   }
+
 }

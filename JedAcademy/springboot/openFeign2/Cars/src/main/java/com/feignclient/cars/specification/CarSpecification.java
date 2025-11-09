@@ -25,7 +25,7 @@ public class CarSpecification {
 
   public static Specification<CarEntity> hasColor(CarColor color) {
     return (root, query, cb) ->
-            color == null ? cb.conjunction() : cb.like(cb.lower(root.get("color")).as(String.class), "%" + color.toString().toLowerCase() + "%");
+            color == null ? cb.conjunction() : cb.equal(root.get("color"), color);
   }
 
   public static Specification<CarEntity> hasPlate(String plate) {
@@ -35,17 +35,17 @@ public class CarSpecification {
 
   public static Specification<CarEntity> hasType(CarType type) {
     return (root, query, cb) ->
-            type == null ? cb.conjunction() : cb.like(cb.lower(root.get("type")).as(String.class), "%" + type.toString().toLowerCase() + "%");
+            type == null ? cb.conjunction() : cb.equal(root.get("type"), type);
   }
 
   public static Specification<CarEntity> hasTransmission(TransmissionType transmission) {
     return (root, query, cb) ->
-            transmission == null ? cb.conjunction() : cb.like(cb.lower(root.get("transmission")).as(String.class), "%" + transmission.toString().toLowerCase() + "%");
+            transmission == null ? cb.conjunction() : cb.equal(root.get("transmission"), transmission);
   }
 
   public static Specification<CarEntity> hasFuel(FuelType fuel) {
     return (root, query, cb) ->
-            fuel == null ? cb.conjunction() : cb.like(cb.lower(root.get("fuelType")).as(String.class), "%" + fuel.toString().toLowerCase() + "%");
+            fuel == null ? cb.conjunction() : cb.equal(root.get("fuelType"), fuel);
   }
 
   public static Specification<CarEntity> hasSeats(Integer seats) {
@@ -76,8 +76,7 @@ public class CarSpecification {
   public static Specification<CarEntity> hasConditioner(Boolean conditioner) {
     return (root, query, cb) ->
             conditioner == null ? cb.conjunction() :
-                    (conditioner ? cb.isTrue(root.get("airConditioner")) :
-                            cb.isFalse(root.get("airConditioner")));
+                    (conditioner ? cb.isTrue(root.get("airConditioner")) : cb.isFalse(root.get("airConditioner")));
   }
 
   public static Specification<CarEntity> hasGps(Boolean gps) {
@@ -92,8 +91,7 @@ public class CarSpecification {
 
   public static Specification<CarEntity> hasStatus(AvailabilityStatus status) {
     return (root, query, cb) ->
-            status == null ? cb.conjunction() :
-                    cb.like(cb.lower(root.get("availabilityStatus")).as(String.class), "%" + status.toString().toLowerCase() + "%" );
+            status == null ? cb.conjunction() : cb.equal(root.get("availabilityStatus"), status);
   }
 
   public static Specification<CarEntity> filter(CarFilterDto filterDto) {

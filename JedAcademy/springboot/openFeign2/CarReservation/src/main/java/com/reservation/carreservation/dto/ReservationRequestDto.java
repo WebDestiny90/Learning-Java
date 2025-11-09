@@ -2,7 +2,6 @@ package com.reservation.carreservation.dto;
 
 import java.time.LocalDateTime;
 
-import com.reservation.carreservation.util.Status;
 
 import lombok.AccessLevel;
 import lombok.Data;
