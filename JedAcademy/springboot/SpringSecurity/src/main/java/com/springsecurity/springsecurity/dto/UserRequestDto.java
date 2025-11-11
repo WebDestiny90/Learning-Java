@@ -9,6 +9,7 @@ import lombok.experimental.FieldDefaults;
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class UserRequestDto {
+  Long id;
   String firstName;
   String surName;
   @Column(nullable = false)

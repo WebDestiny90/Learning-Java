@@ -40,7 +40,7 @@ public class UserService {
     var userEntity = userRepository.findByEmail(requestDto.getEmail())
             .orElseThrow(()-> new UserNotFoundException("User with this email does not exist"));
     if (passwordEncoder.matches(requestDto.getPassword(), userEntity.getPassword())) {
-      return jwtService.generateToken(requestDto.getEmail());
+      return jwtService.generateToken(requestDto.getEmail(), userEntity.getId().toString());
     }
     throw new InvalidPasswordException("Invalid password. Please try again.");
   }
