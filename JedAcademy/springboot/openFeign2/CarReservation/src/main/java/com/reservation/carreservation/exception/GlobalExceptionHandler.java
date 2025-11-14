@@ -1,4 +1,4 @@
-package com.feignclient.cars.exception;
+package com.reservation.carreservation.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,13 +23,8 @@ public class GlobalExceptionHandler {
         return ResponseEntity.badRequest().body(errors);
     }
 
-  @ExceptionHandler(CarNotFoundException.class)
-  public ResponseEntity<String> handleCarNotFoundException(CarNotFoundException ex) {
-    return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
-  }
-
-  @ExceptionHandler(CarNotAvailableException.class)
-  public ResponseEntity<String> handleCarNotAvailableException(CarNotAvailableException ex) {
+  @ExceptionHandler(ReservationConflictException.class)
+  public ResponseEntity<String> handleReservationConflictException(ReservationConflictException ex) {
     return new ResponseEntity<>(ex.getMessage(), HttpStatus.CONFLICT);
   }
 }

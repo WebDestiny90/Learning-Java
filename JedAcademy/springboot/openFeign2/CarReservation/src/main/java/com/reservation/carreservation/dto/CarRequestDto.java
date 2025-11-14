@@ -1,19 +1,16 @@
-package com.feignclient.cars.dto;
+package com.reservation.carreservation.dto;
 
-import com.feignclient.cars.util.AvailabilityStatus;
-import com.feignclient.cars.util.CarType;
-import com.feignclient.cars.util.FuelType;
-import com.feignclient.cars.util.TransmissionType;
+import com.reservation.carreservation.util.AvailabilityStatus;
+import com.reservation.carreservation.util.CarType;
+import com.reservation.carreservation.util.FuelType;
+import com.reservation.carreservation.util.TransmissionType;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
-import java.time.LocalDateTime;
-
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class CarResponseDto {
-  Long id;
+public class CarRequestDto {
   String brand;
   String model;
   Integer manufactureYear;
@@ -31,6 +28,4 @@ public class CarResponseDto {
   Boolean gps;
   Double dailyPrice;
   AvailabilityStatus availabilityStatus;
-  LocalDateTime createdAt;
-  LocalDateTime updatedAt;
 }

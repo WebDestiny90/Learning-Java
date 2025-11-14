@@ -25,7 +25,7 @@ import lombok.experimental.FieldDefaults;
 @Data
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "CarReservation")
+@Table(name = "reservation")
 public class ReservationEntity {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)

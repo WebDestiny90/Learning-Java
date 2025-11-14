@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
-      id: 1-create-cars-table
+      id: 1-create-car-reservation-table
       author: Destiny
       changes:
         - createTable:
-            tableName: cars
+            tableName: reservation
             columns:
               - column:
                   name: id

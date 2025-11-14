@@ -26,6 +26,16 @@ public class OtpSendService {
     var otpAttempt = repository.findByPhoneNumber(phoneNumber)
             .orElseGet(() -> createNewAttempt(phoneNumber));
 
+    if (otpAttempt.getStatus() == OtpStatus.BLOCKED &&
+            otpAttempt.getBlockUntil() != null &&
+            otpAttempt.getBlockUntil().isBefore(LocalDateTime.now())) {
+
+      otpAttempt.setStatus(OtpStatus.WAITING);
+      otpAttempt.setRequestCount(0);
+      otpAttempt.setBlockUntil(null);
+      repository.save(otpAttempt);
+    }
+
 
     if (otpAttempt.getStatus() == OtpStatus.BLOCKED && otpAttempt.getBlockUntil() != null
             && otpAttempt.getBlockUntil().isAfter(LocalDateTime.now())) {

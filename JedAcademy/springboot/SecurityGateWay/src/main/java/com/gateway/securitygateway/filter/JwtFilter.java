@@ -33,8 +33,13 @@ public class JwtFilter implements GatewayFilter {
     try {
       String token = extractJwtFromRequest(exchange.getRequest().getHeaders().getFirst("Authorization"));
 
-      Jws<Claims> claims = Jwts.parser()
+//      Jws<Claims> claims = Jwts.parser()
+//              .setSigningKey(getSigningKey())
+//              .parseClaimsJws(token);
+
+      Jws<Claims> claims = Jwts.parserBuilder()
               .setSigningKey(getSigningKey())
+              .build()
               .parseClaimsJws(token);
 
       if (token == null || !validateToken(claims)) {
