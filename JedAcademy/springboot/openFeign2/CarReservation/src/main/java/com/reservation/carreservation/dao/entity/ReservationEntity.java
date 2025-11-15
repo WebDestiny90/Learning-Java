@@ -18,6 +18,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
 @AllArgsConstructor
@@ -35,6 +36,7 @@ public class ReservationEntity {
   @Column(name = "car_id")
   Long carId;
   @Column(name = "start_date")
+  @CreationTimestamp
   LocalDateTime startDate;
   @Column(name = "end_date")
   LocalDateTime endDate;

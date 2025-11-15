@@ -71,7 +71,6 @@ public class CarEntity {
   @Column(name = "availability_status", length = 50)
   AvailabilityStatus availabilityStatus;
 
-  String location;
 
   @CreationTimestamp
   @Column(name = "created_at")

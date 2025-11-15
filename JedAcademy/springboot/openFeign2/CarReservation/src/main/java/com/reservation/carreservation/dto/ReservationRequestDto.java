@@ -10,8 +10,7 @@ import lombok.experimental.FieldDefaults;
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class ReservationRequestDto {
+  Long id;
   Long userId;
   Long carId;
-  LocalDateTime startDate;
-  LocalDateTime endDate;
 }

@@ -14,11 +14,15 @@ import com.reservation.carreservation.mapper.ReservationMapper;
 import com.reservation.carreservation.util.Status;
 
 import feign.FeignException;
+import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.http.HttpStatus;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Service
 @RequiredArgsConstructor
@@ -35,34 +39,31 @@ public class ReservationService {
 
   @Transactional
   public ReservationSuccessDto reserveCar(ReservationRequestDto requestDto) {
-    CarResponseDto reservedCarDetails;
+    CarResponseDto carDetailsFromFeign;
 
     try {
       ResponseEntity<CarResponseDto> responseEntity = carServiceFeignClient.reserveCar(requestDto.getCarId());
-      reservedCarDetails = responseEntity.getBody();
+      carDetailsFromFeign = responseEntity.getBody();
 
     } catch (FeignException ex) {
       if (ex.status() == HttpStatus.CONFLICT.value()) {
-
         throw new ReservationConflictException("Car is not available for reservation.");
       }
-
       throw ex;
     }
 
+    if (carDetailsFromFeign == null) {
+      throw new ReservationConflictException("Car details were not returned from the car service after successful reservation.");
+    }
 
     var reservationEntity = reservationMapper.requestDtoToEntityDto(requestDto);
     reservationEntity.setStatus(Status.CONFIRMED);
+    reservationEntity.setEndDate(LocalDateTime.now().plusDays(1));
 
     var savedReservation = reservationRepository.save(reservationEntity);
 
-    var reservationResponse = reservationMapper.entityToDtoResponse(savedReservation);
+    var reservationResponse = reservationMapper.entityToDtoResponse(savedReservation, carDetailsFromFeign);
 
-
-    return new ReservationSuccessDto(
-            "Car reserved successfully",
-            reservedCarDetails,
-            reservationResponse
-    );
+    return new ReservationSuccessDto("Car reserved successfully", reservationResponse);
   }
 }

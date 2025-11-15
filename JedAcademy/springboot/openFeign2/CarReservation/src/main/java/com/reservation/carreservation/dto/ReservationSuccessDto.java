@@ -12,6 +12,5 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class ReservationSuccessDto {
   String message;
-  CarResponseDto carDetails;
   ReservationResponseDto reservationDetails;
 }

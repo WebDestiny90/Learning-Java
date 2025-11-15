@@ -13,9 +13,12 @@ import lombok.experimental.FieldDefaults;
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class ReservationResponseDto {
-  Long id;
-  Long userId;
-  Long carId;
+  String brand;
+  String model;
+  Integer manufactureYear;
+  String color;
+  String plate;
+  Double dailyPrice;
   LocalDateTime startDate;
   LocalDateTime endDate;
   Status status;
