@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome</title>
+</head>
+<body>
+<h1 th:text="${message}" style="color: darkred">Welcome to my Site</h1>
+<h2>Orders</h2>
+<p th:each="order: ${orders}"
+   th:text="${order}"></p>
+<a th:if="${isAdmin}" href="https://www.google.com/" target="_blank">
+    <button>Admin Page</button>
+</a>
+<ul th:switch="${role}">
+    <li th:case="ADMIN">Welcome Back Administrator</li>
+    <li th:case="USER">Hello, regular user.</li>
+    <li th:case="*">You have an unknown role.</li>
+</ul>
+</body>
+</html>
