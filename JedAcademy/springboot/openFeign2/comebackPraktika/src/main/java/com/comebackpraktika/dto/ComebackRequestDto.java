@@ -8,7 +8,7 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class ComebackRequestDto {
   String firstName;
-  String SurName;
+  String surName;
   Double balance;
   Integer balanceId;
 }

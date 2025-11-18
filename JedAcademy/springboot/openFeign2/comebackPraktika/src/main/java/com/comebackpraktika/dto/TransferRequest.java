@@ -1,16 +1,13 @@
 package com.comebackpraktika.dto;
 
 import lombok.AccessLevel;
-import lombok.Builder;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
 @Data
-@Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class ComebackResponseDto {
-  String firstName;
-  String surName;
-  Double balance;
-  Integer balanceId;
+public class TransferRequest {
+   Long senderId;
+   Long receiverId;
+   Double amount;
 }

@@ -13,8 +13,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class WelcomeController {
   private final CustomerRepository customerRepository;
-  @GetMapping("/{id}")
-  public String welcome(@PathVariable Long id, Model model) {
+  @GetMapping
+  public String welcome(Model model) {
     var customer = customerRepository.findAll();
     model.addAttribute("customers", customer);
 
@@ -30,8 +30,6 @@ public class WelcomeController {
 //    model.addAttribute("isAdmin", isAdmin);
 //    String role = (id == 1) ? "ADMIN" : "USER";
 //    model.addAttribute("role", role);
-
-
 
     return "table";
   }

@@ -2,6 +2,7 @@ package com.comebackpraktika.controller;
 
 import com.comebackpraktika.dto.ComebackRequestDto;
 import com.comebackpraktika.dto.ComebackResponseDto;
+import com.comebackpraktika.dto.TransferRequest;
 import com.comebackpraktika.service.ComebackService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -41,8 +42,18 @@ public class ComebackController {
     return comebackService.updateUser(responseDto, id);
   }
 
-  @DeleteMapping("{id}")
+  @DeleteMapping("/{id}")
   public void deleteUser(@PathVariable("id") Long id) {
     comebackService.deleteUser(id);
+  }
+
+  @DeleteMapping("/soft/{id}")
+  public void softDeleteUser(@PathVariable("id") Long id) {
+    comebackService.softDeleteUser(id);
+  }
+
+  @PostMapping("/transfer")
+  public ResponseEntity<String> transferMoney(@RequestBody TransferRequest request) {
+    return ResponseEntity.ok(comebackService.transferMoney(request));
   }
 }

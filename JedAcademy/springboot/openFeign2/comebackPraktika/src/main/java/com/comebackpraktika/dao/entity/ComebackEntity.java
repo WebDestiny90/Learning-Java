@@ -17,7 +17,10 @@ public class ComebackEntity {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   Long id;
   String firstName;
-  String SurName;
+  @Column(name = "sur_name")
+  String surName;
   Double balance;
   Integer balanceId;
+  @Builder.Default
+  Boolean deleted = false;
 }
