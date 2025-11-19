@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.time.LocalDateTime;
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -21,6 +23,8 @@ public class ComebackEntity {
   String surName;
   Double balance;
   Integer balanceId;
+  @Builder.Default
+  Double monthlyUsedAmount = 0.0;
   @Builder.Default
   Boolean deleted = false;
 }

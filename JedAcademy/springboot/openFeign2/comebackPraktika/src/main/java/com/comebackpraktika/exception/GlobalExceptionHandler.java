@@ -42,4 +42,9 @@ public class GlobalExceptionHandler {
   public ResponseEntity<String> SameIdException(SameIdException ex) {
     return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
   }
+
+  @ExceptionHandler(MonthlyLimitExceededException.class)
+  public ResponseEntity<String> MonthlyLimitExceededException(MonthlyLimitExceededException ex) {
+    return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
+  }
 }
