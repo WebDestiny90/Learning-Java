@@ -1,0 +1,57 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.5.6'
+    id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.manual.mapping'
+version = '0.0.1-SNAPSHOT'
+description = 'mapping'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    set('springCloudVersion', "2025.0.0")
+}
+
+dependencies {
+    // 1. Web və MongoDB üçün əsas asılılıqlar
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+
+    // 2. Swagger/OpenAPI üçün asılılıq
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.4'
+
+    // 3. Lombok - Kodun təmizliyi üçün
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok' // <-- Mütləq aktiv olmalıdır
+
+    // Qeyd: JPA və PostgreSQL dependencies silindi.
+
+    // Əlavə etmək istədiyiniz digər asılılıqlar (hazırda şərh olunub)
+    // implementation 'org.mapstruct:mapstruct:1.5.5.Final'
+    // implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+    // annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
+
+    // Test asılılıqları
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
