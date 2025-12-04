@@ -58,6 +58,4 @@ public class CarService {
   public List<CarResponseDto> getCars() {
     return carMapper.responseDtoListToEntity(carRepository.findAll());
   }
-
-
 }

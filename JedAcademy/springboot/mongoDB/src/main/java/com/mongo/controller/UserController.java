@@ -9,14 +9,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/user")
-//@RequiredArgsConstructor
+@RequiredArgsConstructor
 public class UserController {
   private final UserRepository userRepository;
-
-  public UserController(UserRepository userRepository) {
-    this.userRepository = userRepository;
-  }
-
 
   @PostMapping("/add")
   public void addUser(@RequestBody UserEntity user) {
