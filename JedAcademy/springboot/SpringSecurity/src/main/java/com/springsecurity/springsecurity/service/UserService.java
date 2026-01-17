@@ -51,11 +51,11 @@ public class UserService {
   }
 
   public UserResponseDto getUserById(Long id) {
-    return userMapper.entityToDto(userRepository.findById(id).orElseThrow(() -> new RuntimeException("User not found with id:" + id)));
+    return userMapper.entityToDto(userRepository.findById(id)
+            .orElseThrow(() -> new RuntimeException("User not found with id:" + id)));
   }
 
   public List<UserResponseDto> getAllUsers() {
     return userMapper.entityListToDtoList(userRepository.findAll());
   }
-
 }
