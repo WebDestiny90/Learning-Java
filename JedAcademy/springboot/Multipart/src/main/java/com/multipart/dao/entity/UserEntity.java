@@ -17,4 +17,7 @@ public class UserEntity {
   Long id;
   String firstName;
   String surName;
+
+  // Frontend üçün istifadə olunacaq şəkil adı (UUID.png)
+  String imageName;
 }
